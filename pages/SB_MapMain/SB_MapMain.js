@@ -145,7 +145,7 @@ wx.request({
       })
         //  可以携带数据，一起跳转到login页面
         wx.navigateTo({
-          url: '../login/login?number='+this.data.number+"&pwd="+this.data.pwd,
+          url: '../login/login',
         })
 
     }

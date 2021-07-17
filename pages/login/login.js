@@ -75,7 +75,7 @@ Page({
     
     }
     
-//注册功能的实现
+//登录功能的实现
     wx.request({
       method: "POST", //指定为http协议中的POST方法
       url: 'https://hemantower.com/public/index.php/api/v1/knightLogin', //后端接口完整URL
@@ -95,8 +95,7 @@ Page({
             duration: 1000
           })
           wx.navigateTo({
-            // url: '../knight/knight',
-            icon:"../Icon/a.png",
+            url: '../Start/Start'
           })
         }
         else {

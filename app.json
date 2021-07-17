@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/Start/Start",
     "pages/login/login",
     "pages/SB_MapMain/SB_MapMain",
     "pages/MapMain/MapMain",
     "pages/index/index",
     "pages/text/text",
-    "pages/Start/Start",
     "pages/AthorLogin/AthorLogin",
     "pages/Merchant/Merchant"
   ],
