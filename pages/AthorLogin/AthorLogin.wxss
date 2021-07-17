@@ -1,0 +1,51 @@
+
+
+
+.header{
+  width: 50%;
+  font-size:60rpx ;
+  font-weight: 800;
+  margin-left: 200rpx;
+  margin-top: 50rpx;
+}
+
+.zc{
+
+  width: 373rpx;
+  height: 70rpx;
+  font-size:35rpx ;
+  font-weight: 800;
+  margin-left: 100rpx;
+  margin-top: 145rpx;
+  border-radius: 10rpx;
+  background-color: #1E90FF;
+  position: relative;
+}
+.zc text{
+  position: absolute;
+  left: 150rpx;
+  top: 15rpx;
+
+}
+
+.register{
+height: 400rpx;
+margin-left:100rpx ;
+margin-top: 80rpx;
+position: relative;
+
+}
+
+.input{
+width: 80%;
+height: 60rpx;
+border: 4rpx solid darkgray;
+margin: 25rpx;
+}
+
+.btn{
+position: absolute;
+  left: 100rpx;
+  background-color: #1E90FF;
+
+}

@@ -1,0 +1,24 @@
+@import "../tpls/base.wxss";
+@import "../tpls/OrderMerchant/OrderMerchant-tpl.wxss";
+
+/*订单详情*/
+.order-top-box{
+
+position: relative;
+z-index: 99999;
+}
+
+.order-detail-box{
+ position: absolute;
+top: -120rpx;
+
+}
+
+h1{
+font-size: 40rpx;
+margin-left: 280rpx;
+font-style: normal;
+font-weight: 1000;
+font-family: cursive;
+
+}

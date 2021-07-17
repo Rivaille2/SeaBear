@@ -1,0 +1,65 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/MapMain/MapMain",
+          "pathName": "pages/MapMain/MapMain",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/text/text",
+          "pathName": "pages/text/text",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/SB_MapMain/SB_MapMain",
+          "pathName": "pages/SB_MapMain/SB_MapMain",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/Start/Start",
+          "pathName": "pages/Start/Start",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/AthorLogin/AthorLogin",
+          "pathName": "pages/AthorLogin/AthorLogin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/Merchant/Merchant",
+          "pathName": "pages/Merchant/Merchant",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

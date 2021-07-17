@@ -1,0 +1,63 @@
+.conster{
+padding: 0%;
+margin: 0%;
+font-style: normal;
+font-size: 33rpx;
+font-weight: 1000;
+font-family: cursive;
+
+}
+
+.TopMain{
+margin-top: 20rpx;
+
+}
+
+.addressDefault{
+width: 100%;
+height: 160rpx;
+margin-left: 40rpx;
+line-height: 45rpx;
+}
+
+.mapstyle{
+
+width:100%;
+height:330px;
+
+}
+
+.mapMain{
+
+}
+
+.bottomform{
+  width: 90%;
+  height: 200rpx;
+  margin-top: 20rpx;
+  margin-left: 40rpx; 
+  position: relative;
+}
+.inputAddress{
+width: 100%;
+height: 30%;
+border-radius: 10rpx;
+border:1px solid #000;
+}
+
+.bottomBtn{
+margin-top: 20rpx;
+
+}
+
+.bottomAddress{
+position: absolute;
+margin-top: 40rpx;
+line-height: 45rpx;
+}
+
+.wRitearea{
+width: 100%;
+height: 500rpx;
+
+}

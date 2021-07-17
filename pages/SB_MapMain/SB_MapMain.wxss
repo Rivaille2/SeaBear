@@ -1,0 +1,86 @@
+.conster{
+  padding: 0%;
+  margin: 0%;
+  font-style: normal;
+  font-size: 33rpx;
+  font-weight: 1000;
+  font-family: cursive;
+  
+  }
+  
+  .TopMain{
+  margin-top: 40rpx;
+
+  }
+  
+  .addressDefault{
+  width: 100%;
+  height: 160rpx;
+  margin-left: 20rpx;
+  line-height: 45rpx;
+  }
+  
+  .mapstyle{
+  
+  width:100%;
+  height:330px;
+  
+  }
+  
+  .mapMain{
+  
+  }
+
+  .bottomAddress{
+    margin-top: 40rpx;
+    margin-left: 46rpx;
+    line-height: 65rpx;
+    }
+  
+  
+  .wRitearea{
+  width: 100%;
+  height: 650rpx;
+  margin-top: 40rpx;
+  
+  }
+  
+.witem01{
+    width: 100rpx;
+    height: 20rpx;
+    font-size: 48rpx;
+   margin-left: 238rpx;
+
+  }
+
+.writefrom{
+
+line-height: 80rpx;
+position: relative;
+}
+
+.writefrom view{
+font-size: 38rpx;
+
+}
+
+.fromitem{
+margin-left: 150rpx;
+
+}
+
+  .inputAddress{
+    width: 80%;
+    height: 14%;
+    border-radius: 10rpx;
+    border:1px solid #000;
+
+    }
+
+    .btn{
+position: absolute;
+bottom: -540rpx;
+right: -42rpx;
+color: #ffffff;
+background-color: #1E90FF;
+    }

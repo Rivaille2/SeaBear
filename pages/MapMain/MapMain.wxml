@@ -1,0 +1,63 @@
+<view class="conster">
+
+<!-- 地址解析经纬度搜索地图 -->
+
+    <!-- 地图获取信息部分 -->
+    <view class="TopMain">
+
+        <view class="addressDefault">
+        <view>默认地址：桂林理工大学博文管理学院</view>
+        <span>纬度：</span>
+        <text>{{latitude}}</text>
+        <span>  经度：</span>
+        <text>{{longitude}}</text>
+    </view>
+
+
+<!--地图容器-->
+<!--longitude及latitude为设置为调转到指定地址位置，默认不显示-->
+
+<view class="mapMain">
+
+    <map class="mapstyle" wx:if="{{poi.longitude == null}}" id="myMap"
+    markers="{{markers}}"
+    longitude="{{longitude}}"
+    latitude="{{latitude}}"
+    scale='16' show-location>
+</map>
+
+<map class="mapstyle" wx:if="{{poi.longitude != null}}" id="myMap"
+    markers="{{markers}}"
+    longitude="{{poi.longitude}}"
+    latitude="{{poi.latitude}}"
+    scale='16' show-location>
+</map>
+
+</view>
+
+<!--form表单-->
+<view class="bottomform">
+    <form bindsubmit="formSubmit">
+    <!--地址描述输入框,示例：北京市海淀区彩和坊路海淀西大街74号-->
+    <input class="inputAddress"  name="geocoder" placeholder=" 如:广西壮族自治区桂林市雁山区雁山街317号"></input>
+    <!--提交表单数据-->
+    <button class="bottomBtn" form-type="submit">获取坐标</button>
+</form>
+<!--地址描述经纬度展示-->
+
+<view class="bottomAddress">
+    <view>地址纬度：{{poi.latitude}}</view>
+    <view>地址经度：{{poi.longitude}}</view>
+</view>
+</view>
+
+    </view>
+   
+    <!-- 地图信息填写部分 -->
+
+<view class="wRitearea">
+
+
+</view>
+
+</view>

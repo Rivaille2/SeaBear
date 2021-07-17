@@ -1,0 +1,21 @@
+.conster{
+width: 200%;
+height: 1205rpx;
+position: relative;
+}
+
+.btnItem{
+  position: absolute;
+width: 300rpx;
+height: 80rpx;
+left: 200rpx;
+background-color: #1E90FF;
+}
+
+.btnItem1{
+top: 200rpx;
+}
+
+.btnItem2{
+  top: 400rpx;
+  }

@@ -1,0 +1,8 @@
+
+<view class="conster" style="background:url('../Icon/webp.jpg') no-repeat center">
+
+  <button class="btnItem btnItem1"  bindtap="MImiClick">我们的秘密</button>
+  <button class="btnItem btnItem2"  bindtap="AthuorClick">管理员</button>
+
+
+</view>
