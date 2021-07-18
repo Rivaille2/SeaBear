@@ -7,12 +7,14 @@
     "pages/index/index",
     "pages/text/text",
     "pages/AthorLogin/AthorLogin",
-    "pages/Merchant/Merchant"
+    "pages/Merchant/Merchant",
+    "pages/Update/Update",
+    "pages/laboratory/laboratory"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1E90FF",
-    "navigationBarTitleText": "SlowpokeBoy",
+    "navigationBarTitleText": "熊子路",
     "navigationBarTextStyle": "black"
   },
   "plugins": {
@@ -20,18 +22,39 @@
       "version": "1.0.6",
       "provider": "wx76a9a06e5b4e693e"
     },
-
-    "WechatVoice": {    
-      "version": "0.3.4",  
-      "provider": "wx069ba97219f66d99"  
-    }
+    "routePlan": {
+      "version": "1.0.12",
+      "provider": "wx50b5593e81dd937a"
+      }
+    
   },
-
   "permission": {
     "scope.userLocation": {
       "desc": "你的位置信息将用于小程序定位"
     }
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "selectedIconPath": "/pages/Icon/home_start.png",
+        "iconPath": "/pages/Icon/home_end.png",
+        "pagePath": "pages/Start/Start",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "/pages/Icon/lu_start.png",
+        "iconPath": "/pages/Icon/lu_end.png",
+        "pagePath": "pages/text/text",
+        "text": "路线导航"
+      },
+      {
+        "selectedIconPath": "/pages/Icon/lab_start.png",
+        "iconPath": "/pages/Icon/lab_end.png",
+        "pagePath": "pages/laboratory/laboratory",
+        "text": "实验室"
+      }
+    ]
+  }
 }

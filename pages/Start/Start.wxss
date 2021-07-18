@@ -1,7 +1,13 @@
 .conster{
 width: 200%;
-height: 1205rpx;
+height: 1000rpx;
 position: relative;
+}
+
+.startconster{
+width: 70%;
+height: 1305rpx;
+z-index: 9999;  
 }
 
 .btnItem{

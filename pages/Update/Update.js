@@ -17,49 +17,9 @@ Page({
   data: {
     longitudestar:110.296000944,
     lagitudestarstar:25.06190782,
-    name:"",
     number:"",
     pwd:""
   },
-
-
-    //获取学生姓名
-    
-    getStudentName(event) {
-      console.log('获取输入的学生姓名', event.detail.value)
-      
-      this.setData({
-      name: event.detail.value
-      
-      })
-      
-      },
-      
- //获取身份证号
-    
- getNumber(event) {
-  console.log('获取输入的身份证', event.detail.value)
-  
-  this.setData({
-  number: event.detail.value
-  
-  })
-  
-  },
-
- // 获取密码
-    
- getMiMa(event) {
-  console.log('获取输入的密码', event.detail.value)
-  
-  this.setData({
-    pwd: event.detail.value
-  
-  })
-  
-  },
-
-
 
 
 
@@ -70,7 +30,11 @@ Page({
     qqmapsdk = new QQMapWX({
       key: 'Z53BZ-ZKNR3-U4I33-Y73YA-ATBUQ-NGFDK' //这里自己的key秘钥进行填充
     });
-  
+
+  this.data.number=wx.getStorageSync('number');
+  this.data.pwd=wx.getStorageSync('pwd');
+  console.log("缓存里面的number："+this.data.number)
+  console.log("缓存里面的number："+this.data.pwd)
   },
 
   /**
@@ -86,17 +50,21 @@ Page({
   onShow: function () {
 
   },
+// 返回主页
+  backtop:function(){
+
+    wx.switchTab({
+      url: '../Start/Start',
+    })
+
+  },
 
 //    submitlogin 提交数据点击事件
 
-submitlogin:function(){
+upadate:function(){
 
-  let name = this.data.name
-    
   let number = this.data.number
-
-  let pwd = this.data.pwd
-
+  
   // 将地址按照中国-广西自治区-玉林市-北流市
    let TrueAddress ="中国"+"-"+this.data.REGION_PROVINCE+"-"+this.data.REGION_CITY+"-"+this.data.REGION_COUNTRY;
   //  console.log(TrueAddress);
@@ -119,17 +87,15 @@ if(flag){
     TrueAddress ="中国"+"-"+"广西壮族自治区"+"-"+"桂林市"+"-"+"雁山区";
   }
 
-//注册功能的实现
+//修改经纬度功能的实现
 wx.request({
   method: "POST", //指定为http协议中的POST方法
-  url: 'https://hemantower.com/xiaobeisignin/uersubmit', //后端接口完整URL
+  url: 'http://121.5.114.19:8080/xiaobeisignin/uersubmit', //后端接口完整URL
   data: {
-    name:name,
     lagitude: this.data.lagitude,
     longitude: this.data.longitude,
     addressName:TrueAddress,
     number:number,       //将表单中name的值绑定给对象的name属性
-    pwd: pwd                //将表单中pwd的值绑定给对象的pwd属性
   },
   header: {
     'content-type': 'application/json' // 设置传输格式为json格式，默认如此
@@ -140,19 +106,19 @@ wx.request({
     if (res.data.code == 200) {
       wx.showToast({
         icon:"none",
-        title: '等待审核，提醒管理员通过审核（大佬，大佬跟班）',
+        title: '修改成功',
         duration: 1000
       })
         //  可以携带数据，一起跳转到login页面
-        wx.navigateTo({
-          url: '../login/login',
+        wx.switchTab({
+          url: '../Start/Start',
         })
 
     }
     else {
       wx.showToast({
        image:"../Icon/fail.gif",
-        title: '注册直接失败',
+        title: '修改失败',
         duration: 1300
       })
     }
@@ -169,22 +135,8 @@ wx.request({
 
 JiaoYan(){
 
-//校验学生名字
-var reg = /^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,6}$/;
-      
-if(!this.data.name.match(reg))
-{
-  wx.showToast({
-    icon: 'none',
-    title: '名字不正确格式',
-    })
-return false;
-}
 
-console.log(this.data.name)  
-
-  
-  //校验学号
+  //校验身份证号
   var number=this.data.number;
   console.log(number)
  //身份证号合法性验证 
@@ -241,19 +193,6 @@ console.log(this.data.name)
       return  pass;
       }
 
-  //校验密码
-  
-  if (this.data.pwd.length < 6) {
-  wx.showToast({
-  icon: 'none',
-  
-  title: '密码至少6位',
-  
-  })
-  
-  return false;
-  
-  }
 
 return true;
 },
@@ -333,7 +272,6 @@ mapclick: function() {
         });
         //移动marker
         that.mapCtx.moveToLocation();
-       
       },
       fail: function(res) {  
         console.log("点击地图fail:" + JSON.stringify(res));   

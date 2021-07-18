@@ -1,0 +1,56 @@
+
+<view class="conster">
+
+<image class="backtop" bindtap="backtop" src="../Icon/backe.png"></image>
+<!-- 地址解析经纬度搜索地图 -->
+
+    <!-- 地图获取信息部分 -->
+    <view class="TopMain">
+
+        <view class="addressDefault">
+        <view>默认：广西壮族自治区桂林市雁山区雁山街317号</view>
+        <span>纬度：</span>
+        <text>{{lagitudestarstar}}</text>
+        <span>  经度：</span>
+        <text>{{longitudestar}}</text>
+    </view>
+
+
+<!--地图容器-->
+<!--longitude及latitude为设置为调转到指定地址位置，默认不显示-->
+
+<view class="mapMain">
+
+    <map class="mapstyle" wx:if="{{longitude == null}}" id="map"
+    markers="{{markers}}"
+    longitude="{{longitudestar}}"
+    latitude="{{lagitudestarstar}}"
+    scale='16' 
+    show-location="true"
+    bindtap='mapclick'>
+</map>
+
+<map class="mapstyle" wx:if="{{longitude != null}}" id="map" 
+markers="{{markers}}"
+longitude="{{longitude}}" 
+latitude="{{lagitude}}" 
+scale="14" 
+show-location="true" 
+bindtap='mapclick'></map>
+
+</view>
+
+
+<view class="bottomAddress">
+    <view>地名: </view>
+    <view data-name="{{addressName}}">{{addressName}}</view>
+    <view data-lagitude="{{lagitude}}">地址纬度：{{lagitude}}</view>
+    <view data-longitude="{{longitude}}">地址经度：{{longitude}}</view>
+</view>
+
+<button class="btn" type="submit" bindtap="upadate">修改数据</button>
+
+
+    </view>
+
+</view>

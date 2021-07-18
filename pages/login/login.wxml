@@ -1,13 +1,13 @@
 <view class="conter">
 
 <view class="header">
-<text>BearLogin</text>
+<text>BearsLogin</text>
 </view>
 
 <view class="register">
 
-<input class="input" bindinput="getNumber" placeholder="请输入身份证号"></input>
-<input class="input" bindinput="getMiMa"  type="password"    placeholder="请输入密码"></input>
+<input class="input" bindinput="getNumber" value="{{number}}" placeholder="请输入身份证号"></input>
+<input class="input" bindinput="getMiMa" value="{{pwd}}"  type="password"    placeholder="请输入密码"></input>
 
 <button class="btn"  bindtap="denglu">登录</button>
 

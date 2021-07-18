@@ -57,6 +57,12 @@
         {
           "name": "pages/Merchant/Merchant",
           "pathName": "pages/Merchant/Merchant",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/Update/Update",
+          "pathName": "pages/Update/Update",
           "scene": null
         }
       ]

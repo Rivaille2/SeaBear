@@ -1,6 +1,6 @@
-<map class="map" id="map" 
-longitude="{{longitude}}" 
-latitude="{{latitude}}" 
-scale="14" 
-show-location="true" 
-bindtap='mapclick'></map>
+
+<view class="conster">
+
+    <button bindtap="goNav">出发</button>
+
+</view>

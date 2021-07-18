@@ -1,13 +1,13 @@
 
 Page({
   data: {
-    number: '',
-    pwd: ''
+    number: "",
+    pwd: ""
     },
     
    onLoad:function(options){
-  this.data.pwd = options.pwd;
-  this.data.number=options.number;
+  // this.data.pwd = options.pwd;
+  // this.data.number=options.number;
 
   console.log(this.data.pwd)
    },
@@ -50,7 +50,7 @@ Page({
     wx.showToast({
     icon: 'none',
     
-    title: '学号为18位',
+    title: '身份证为18位',
     
     })
     

@@ -1,4 +1,4 @@
-var myPlugin = requirePlugin('WechatVoice');  // 引入语音插件
+
 import {
   Merchant
 } from 'Merchant-module.js';
@@ -7,7 +7,7 @@ var merchant = new Merchant();
 Page({
 
   data: {
-    odstatus: 1,
+    odstatus: 1, 
     name: '',
     showStatus: null,
     showStatus1:null
@@ -30,19 +30,6 @@ Page({
         console.log("请求1秒触发一次");
     
       }, 55000)
-
-    })
-
-    this.setData({
-      showStatus1: setInterval(function () {
-
-           if(that.data.orderMerchant[0]!=null && (that.data.currentTabsIndex==0))
-      {
-        that.ViocePlay();
-        console.log("请求2秒触发一次语音");
-      }
-    
-      }, 15000)
 
     })
  
@@ -93,28 +80,6 @@ Page({
     console.log(this.data.orderMerchant)
 
   },
-
-// 语音播报
-
- ViocePlay:function(){
-
-  this.innerAudioContext = wx.createInnerAudioContext();
-  let that = this
-  myPlugin.textToSpeech({   // 调用插件的方法
-      lang: 'zh_CN',
-      content:'老板老板有订单未处理',
-       success: function (res) {
-         that.playAudio(res.filename);
-       },
-    })
- },
- playAudio(e){
-    this.innerAudioContext.src = e
-    this.innerAudioContext.play();
-
- },
-
-
 
   
   // 点击下单事件（通过order的id确定是哪个商品，如何修改它的mstatus为2）

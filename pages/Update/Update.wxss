@@ -1,0 +1,50 @@
+.conster{
+  padding: 0%;
+  margin: 0%;
+  font-style: normal;
+  font-size: 33rpx;
+  font-weight: 1000;
+  font-family: cursive;
+  
+  }
+
+  .backtop{
+width: 60rpx;
+height: 55rpx;
+margin-left: 20rpx;
+margin-top: 10rpx;
+  }
+  
+  .TopMain{
+  /* margin-top: 40rpx; */
+
+  }
+  
+  .addressDefault{
+  width: 100%;
+  height: 160rpx;
+  margin-left: 20rpx;
+  line-height: 45rpx;
+  }
+  
+  .mapstyle{
+  
+  width:100%;
+  height:330px;
+  
+  }
+  
+  .bottomAddress{
+    margin-top: 40rpx;
+    margin-left: 46rpx;
+    line-height: 65rpx;
+    }
+  
+  
+    .btn{
+      margin-top: 60rpx;
+     
+      color: #ffffff;
+      background-color: #1E90FF;
+          }
+  

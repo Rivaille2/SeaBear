@@ -1,15 +1,25 @@
 // pages/loginMerchant/loginMerchant.js
 Page({
   data: {
-    number: '',
-    pwd: ''
+    number: "",
+    pwd: "",
     },
     
    onLoad:function(options){
-  this.data.pwd = options.pwd;
-  this.data.number=options.number;
+    //  从缓存获取账号密码
+     let scnumber=wx.getStorageSync('number');
+     let scpwd=wx.getStorageSync('pwd');
+    //  当密码不是第一次输入的时候自动填上账号密码
 
-  console.log(this.data.pwd)
+
+if(scnumber && scpwd){
+  this.setData({
+   number: scnumber,
+   pwd : scpwd
+  })
+}
+
+
    },
 
     //获取用户名
@@ -34,6 +44,7 @@ Page({
     //登录
     
     denglu() {
+     
     let number = this.data.number
     
     let pwd = this.data.pwd
@@ -45,12 +56,12 @@ Page({
     console.log("pwd", pwd)
     
     //校验用户名
-    
+    console.log("number==:"+number)
     if (number.length != 18) {
     wx.showToast({
     icon: 'none',
     
-    title: '学号为18位',
+    title: '身份证为18位',
     
     })
     
@@ -78,7 +89,7 @@ Page({
 //登录功能的实现
     wx.request({
       method: "POST", //指定为http协议中的POST方法
-      url: 'https://hemantower.com/public/index.php/api/v1/knightLogin', //后端接口完整URL
+      url: 'https://hemantower.com/xiaobeisignin/userlogin', //后端接口完整URL
       data: {
         number:number,//将表单中name的值绑定给对象的school_name属性
         pwd: pwd  //将表单中pwd的值绑定给对象的pwd属性
@@ -90,12 +101,15 @@ Page({
         console.log(res.data)
 //如果返回值的code为200说明登陆成功
         if (res.data.code == 200) {
+// 登陆成功将身份证，密码存在缓存里面
+         wx.setStorageSync('number', number);
+         wx.setStorageSync('pwd', pwd);
           wx.showToast({
             title: '登录成功',
             duration: 1000
           })
           wx.navigateTo({
-            url: '../Start/Start'
+            url: '../Update/Update'
           })
         }
         else {
