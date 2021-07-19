@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "可爱的实验室小伙伴",
+  "navigationBarTextStyle": "black"
 }

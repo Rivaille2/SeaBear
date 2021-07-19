@@ -1,2 +1,24 @@
-<!--pages/laboratory/laboratory.wxml-->
-<text>pages/laboratory/laboratory.wxml</text>
+<view class="conster">
+
+  <view class="sp_top">
+    <swiper class="" indicator-dots='true' indicator-color='white' indicator-active-color='black' autoplay='true'>
+  <!-- <swiper-item><image src="../image/sy3_banner.jpg" /></swiper-item>
+  <swiper-item><image src="../image/sys4_banner.jpg" /></swiper-item> -->
+  <swiper-item><image src="../image/sys_1.jpg" /></swiper-item>
+</swiper>
+  </view>
+
+  <image class="startconster" src="../Icon/webp.png"></image>
+
+
+  <view class="text_main">
+    <h1>大学生创新实践基地</h1>
+      <rich-text user-select="">
+         创新实践基地以培养和提高学生创新实践能力为目的鼓励和选拔优秀学生参加各种学科竞赛。拥有良好的开放环境，-和完善的设备,资料丰富，经验充分，具有良好的学习环境和实践氛围。鼓励学生在创新实践基地中广泛参与相关创新项目，培养创新精神，通过专业实践活动的过程，能将理论和实践结合，培养应用型工程技术的人才，涉及领城广泛，例如微控制器 (MCU2E用、电路段一E、物联网+领域、EBnNA 1应用开发、自动控制等。
+      </rich-text>
+    
+    </view>
+    
+
+
+</view>

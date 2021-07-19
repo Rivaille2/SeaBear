@@ -19,9 +19,9 @@ goNav: function(e) {
   let referer = '熊子路';
 
   let endPoint = JSON.stringify({ //终点
-    'name': '上海火车站',
-    'latitude': 31.150500,
-    'longitude': 121.270270
+    'name': '桂林北站',
+    'latitude': 25.328835,
+    'longitude': 110.30275
   });
   // //startPoint  起点位置不传的话，默认是当前位置
   //let startPoint = JSON.stringify({ //起点

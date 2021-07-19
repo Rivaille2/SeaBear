@@ -1,13 +1,11 @@
 <import src="../tpls/OrderMerchant/OrderMerchant-tpl.wxml" />
 
-
 <view class="conter">
-
-
+  <image class="backtop" bindtap="backtop" src="../Icon/backe.png"></image>
   <view class="order-top-box">
-<h1>
+<view class="user_title">
 未处理的请求
-</h1>
+</view>
 
 
 </view>
@@ -15,7 +13,7 @@
 <view class="order-detail-box">
 <!-- 未处理订单的详情页 -->
 <view class="product-detail-properties">
-  <template is="orderMerchant" data="{{orderMerchant:orderMerchant}}"></template>
+  <template is="userMerchant" data="{{userMerchant:userMerchant}}"></template>
 </view>
 
 </view>

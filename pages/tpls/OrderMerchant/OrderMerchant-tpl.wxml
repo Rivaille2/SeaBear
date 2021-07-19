@@ -1,48 +1,19 @@
 <!--  商家订单列表模板 -->
-<template name="orderMerchant">
+<template name="userMerchant">
 <view class="products-box">
-  <!-- wxs相当js,下面是将字符串以逗号为分个，选取第五个 -->
-<wxs module="ml">
- var getfirstiaddress=function(str){
-  var ss=str.split('"');
-  return ss[23];
- }
-  module.exports.getfirstiaddress=getfirstiaddress;
-</wxs>
-
-  <view>
-        <image class="products-image" src="{{productsInfo.imgs.url}}">
-       </image>
-      </view>
-  <block wx:for="{{orderMerchant}}">
-    <view class="products-item"   data-id="{{item.id}}">
+  <block wx:for="{{userMerchant}}">
+     <view class="products-item"   data-account="{{item.account}}">
   <!-- 接收按钮 -->
-<view wx:if="{{item.mstatus==1}}" class="receive receivecolor1" bindtap="getreceive" data-id="{{item.id}}">
- <text>接单</text>
-</view>
-
-<view wx:if="{{item.mstatus==2}}" class="receive receivecolor2">
- <text>完成</text>
-</view>
-
-<view wx:if="{{item.mstatus==3}}" class="receive receivecolor3">
- <text>送达</text>
-</view>
-      <view>
-        <image class="products-image" src="{{item.snap_img}}">
-       </image>
+          <view class="receive receivecolor1" bindtap="getreceive" data-account="{{item.account}}">
+               <text>同意</text>
+          </view>
+              <view class="products-item-rigth">
+                <text class="name">成员:{{item.name}}</text>
+                  <text class="name">账号：{{item.account}}</text>
+                  <text class="snap_address">所在地址：{{item.locationChina}}</text>
+                  <text class="name">申请时间：{{item.time}}</text>
+              </view>
       </view>
-      <view class="products-item-rigth">
-      <text class="name">{{item.snap_name}}</text>
-      <text class="name">×{{item.total_count}}</text>
-      <view class="price">￥{{item.total_price}}</view>
-      <text class="snap_address">收货地址：{{ml.getfirstiaddress(item.snap_address)}}</text>
-      <text class="name">下单时间：{{item.create_time}}</text>
-      </view>
-
-    </view>
   </block>
-
-
 </view>
 </template>

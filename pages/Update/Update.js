@@ -90,7 +90,7 @@ if(flag){
 //修改经纬度功能的实现
 wx.request({
   method: "POST", //指定为http协议中的POST方法
-  url: 'http://121.5.114.19:8080/xiaobeisignin/uersubmit', //后端接口完整URL
+  url: 'https://hemantower.com/xiaobeisignin/userupdate', //后端接口完整URL
   data: {
     lagitude: this.data.lagitude,
     longitude: this.data.longitude,

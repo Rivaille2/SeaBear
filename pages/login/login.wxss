@@ -18,7 +18,7 @@
   margin-left: 100rpx;
   margin-top: 145rpx;
   border-radius: 10rpx;
-  background-color: #1E90FF;
+  background-color: #87CEFA;
   position: relative;
 }
 .zc text{
@@ -37,7 +37,7 @@
   margin-left: 100rpx;
   margin-top: 45rpx;
   border-radius: 10rpx;
-  background-color: #1E90FF;
+  background-color: #87CEFA;
   position: relative;
 
 }
@@ -67,6 +67,6 @@ margin: 25rpx;
 .btn{
 position: absolute;
   left: 100rpx;
-  background-color: #1E90FF;
+  background-color: #87CEFA;
 
 }

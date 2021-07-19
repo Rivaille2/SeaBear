@@ -1,24 +1,33 @@
 @import "../tpls/base.wxss";
 @import "../tpls/OrderMerchant/OrderMerchant-tpl.wxss";
 
+
+.backtop{
+  width: 60rpx;
+  height: 55rpx;
+  margin-left: 20rpx;
+  margin-top: 40rpx;
+  z-index: 99999;
+    }
+
 /*订单详情*/
 .order-top-box{
+width: 800rpx;
+height: 50rpx;
 
-position: relative;
-z-index: 99999;
 }
 
 .order-detail-box{
- position: absolute;
-top: -120rpx;
+
+ margin-top: -160rpx;
 
 }
 
-h1{
+.user_title{
 font-size: 40rpx;
 margin-left: 280rpx;
+margin-top: -50rpx;
 font-style: normal;
 font-weight: 1000;
 font-family: cursive;
-
 }

@@ -1,6 +1,6 @@
 
   // 引入SDK核心类
-  var QQMapWX = require('../jssdk/qqmap-wx-jssdk.js');
+  var QQMapWX = require('../jssdk/qqmap-wx-jssdk2.js');
 
  // 实例化API核心类
 var qqmapsdk = new QQMapWX({
@@ -279,12 +279,12 @@ mapclick: function() {
           REGION_CITY:null,  
           ADDRESS:null};  
         function regexAddressBean(address, addressBean){  
-            regex = /^(.*?[市州]|.*?地区|.*?特别行政区)(.*?[市区县])(.*?)$/g;  
+            regex = /^(.*?[市]|.*?地区|.*?特别行政区)(.*?[市区县])(.*?)$/g;  
             var addxress = regex.exec(address);  
             addressBean.REGION_CITY=addxress[1];  
             addressBean.REGION_COUNTRY=addxress[2];  
             addressBean.ADDRESS=addxress[3]+"("+res.name+")";  
-            // console.log(addxress);  
+            console.log("address:",address);  
         }  
         if(!(REGION_PROVINCE = regex.exec(res.address))){  
           regex = /^(.*?(省|自治区))(.*?)$/;  

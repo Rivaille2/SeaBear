@@ -1,5 +1,4 @@
 import {Config} from '../utils/config.js';
-import { Token } from './token.js';
 
 class Base{
 constructor(){
@@ -21,7 +20,7 @@ wx.request({
   data: params.data,
   header: {
     'content-type':'application/json',
-    'token':wx.getStorageSync('token')
+    // 'token':wx.getStorageSync('token')
   },
   method: params.type,
   success: function(res){

@@ -3,8 +3,6 @@
     "pages/Start/Start",
     "pages/login/login",
     "pages/SB_MapMain/SB_MapMain",
-    "pages/MapMain/MapMain",
-    "pages/index/index",
     "pages/text/text",
     "pages/AthorLogin/AthorLogin",
     "pages/Merchant/Merchant",
@@ -13,7 +11,7 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#1E90FF",
+    "navigationBarBackgroundColor": "#87CEFA",
     "navigationBarTitleText": "熊子路",
     "navigationBarTextStyle": "black"
   },

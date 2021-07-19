@@ -1,1 +1,17 @@
-/* pages/text/text.wxss */
+.conster{
+margin: 0;
+padding: 0;
+}
+
+.Text_top{
+  width: 92%;
+  height: 200rpx;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+}
+
+.btn_main{
+margin-top: 200rpx;
+background-color: #87CEFA;
+
+}

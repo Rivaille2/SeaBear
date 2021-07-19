@@ -4,15 +4,12 @@ class Merchant extends Base{
 constructor(){
 super();//千万别忘记了
 }
-
-getOrderDetail(name,index,callback){
+// 申请成员的信息
+getUserDetail(callback){
   
-    if(index>=0){
-      index+=1;
-    }
   //  传递参数到base基类的request（）
   var params={
-    url:'merchant/order_merchant?school_name='+name+'&'+'mstatus='+index,
+    url:'xiaobeisignin/getsubmit',
     sCallback:function(data){
      callback&&callback(data);
     }
@@ -21,13 +18,19 @@ getOrderDetail(name,index,callback){
 this.request(params);
 }
 
-// 将被点击接单的order的mstatus改为2，而且返回修改完成的状态码，用于将订单清除
-getMstatusbyId(id,callback){
+// 将被点击成员申请的按钮返回管理员同意申请的成员number账号
+getAgreeSubmit(number,callback){
   
+  var p={
+    number:number
+  }
+  var number1=JSON.stringify(p);
 
+
+console.log("agerr:"+number)
 //  传递参数到base基类的request（）
 var params={
-  url:'merchant/MstatusById?id='+id+'&'+'mstatus='+2,
+  url:'xiaobeisignin/agreesubmit?number='+number,
   sCallback:function(data){
    callback&&callback(data);
   }

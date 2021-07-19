@@ -82,5 +82,5 @@ position: absolute;
 bottom: -540rpx;
 right: -42rpx;
 color: #ffffff;
-background-color: #1E90FF;
+background-color: #87CEFA;
     }
