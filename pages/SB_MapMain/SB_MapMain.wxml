@@ -52,14 +52,14 @@ bindtap='mapclick'></map>
    
     <!-- 地图信息填写部分 -->
 
-<view class="wRitearea">
+<view class="wRitearea {{isIphoneX?'isIPX':''}}">
   <h2 class="witem01">Your登录信息</h2>
   <form class="writefrom">
     <view class="fromitem">
     <view> 姓   名  ：</view>
     <input class="inputAddress" bindinput="getStudentName"  type="text" name="usernumber"/>
    <view>  身份证号码：</view>
-    <input class="inputAddress" bindinput="getNumber"  type="number" name="usernumber"/>
+    <input class="inputAddress" bindinput="getNumber"  type="text" name="usernumber"/>
     <view>  小北密码：</view>   
     <input class="inputAddress" bindinput="getMiMa" type="password" name="userpassword"/>
     

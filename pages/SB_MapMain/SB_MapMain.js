@@ -1,4 +1,5 @@
-
+// 引用app.js的函数
+const app = getApp()
   // 引入SDK核心类
   var QQMapWX = require('../jssdk/qqmap-wx-jssdk2.js');
 
@@ -70,6 +71,15 @@ Page({
     qqmapsdk = new QQMapWX({
       key: 'Z53BZ-ZKNR3-U4I33-Y73YA-ATBUQ-NGFDK' //这里自己的key秘钥进行填充
     });
+
+     //------------------获取当前设备机型-----------------------------
+     let isIphoneX = app.globalData.isIphoneX;
+     this.setData({
+         isIphoneX: isIphoneX
+     })
+    
+
+console.log("sb_手机："+isIphoneX)
   
   },
 
@@ -97,14 +107,15 @@ submitlogin:function(){
 
   let pwd = this.data.pwd
 
+  let lagitude = this.data.lagitude;
+
+  let longitude = this.data.longitude;
+
+
   // 将地址按照中国-广西自治区-玉林市-北流市
    let TrueAddress ="中国"+"-"+this.data.REGION_PROVINCE+"-"+this.data.REGION_CITY+"-"+this.data.REGION_COUNTRY;
-  //  console.log(TrueAddress);
-  //   console.log( this.data.lagitude)
-  //   console.log( this.data.longitude)
-  //   console.log( name)
-  //   console.log( number)
-  //   console.log( pwd)
+
+  //  console.log("地区："+this.data.REGION_PROVINCE)
 
 // 校验传递的数据
       var flag = true;
@@ -113,11 +124,13 @@ submitlogin:function(){
   
 if(flag){
 
-  if(!this.data.lagitude){
+  if(!this.data.lagitude || !this.data.REGION_COUNTRY){
     this.data.lagitude=this.data.lagitudestarstar;
     this.data.longitude=this.data.longitudestar;
     TrueAddress ="中国"+"-"+"广西壮族自治区"+"-"+"桂林市"+"-"+"雁山区";
   }
+
+  
 
 //注册功能的实现
 wx.request({
@@ -138,22 +151,32 @@ wx.request({
     console.log(res.data)
 //如果返回值的code为200说明提交成功，等待通过审核，否则申请失败
     if (res.data.code == 200) {
+      wx.setStorageSync('addressName', TrueAddress);
+      wx.setStorageSync('lagitude',  lagitude);
+      wx.setStorageSync('longitude', longitude);
+
       wx.showToast({
         icon:"none",
         title: '等待审核，提醒管理员通过审核（大佬，大佬跟班）',
-        duration: 1000
+        duration: 3000
       })
         //  可以携带数据，一起跳转到login页面
         wx.navigateTo({
-          url: '../login/login',
+          url: '../login/login?code='+res.data.code,
         })
 
+    }else if(res.data.code == 300){
+      wx.showToast({
+        image:"../Icon/fail.gif",
+         title: '已经在注册中',
+         duration: 1500
+       })
     }
-    else {
+    else if(res.data.code == 500){
       wx.showToast({
        image:"../Icon/fail.gif",
-        title: '注册直接失败',
-        duration: 1300
+        title: '账号密码错误',
+        duration: 2500
       })
     }
 
@@ -228,7 +251,6 @@ console.log(this.data.name)
             icon: 'none',
             title: tip,
             })
-
         }
       }
     console.log("pass:"+pass,"TIP:"+ tip)

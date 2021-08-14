@@ -7,10 +7,13 @@
   font-family: cursive;
   
   }
+
+  .isIPX {
+    padding-bottom: 30rpx !important;
+}
   
   .TopMain{
   margin-top: 40rpx;
-
   }
   
   .addressDefault{

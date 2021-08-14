@@ -15,9 +15,20 @@
   <text>注册</text>
 </view>
 
+<view class="btnItem btnItem3" bindtap="AthuorClick">
+  <text>管理员</text>
+</view>
+
+<view class="btnItem btnItem4" bindtap="Teacherlogin">
+  <text>老师登录</text>
+</view>
+
+
 <view class="black" bindtap="black">
   <text>返回</text>
 </view>
+
+
 
 </view>
 

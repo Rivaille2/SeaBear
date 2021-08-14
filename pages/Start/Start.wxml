@@ -3,28 +3,22 @@
 
   <view class="sp_top">
     <swiper class="" indicator-dots='true' indicator-color='white' indicator-active-color='black' autoplay='true'>
-  <!-- <swiper-item><image src="../image/sy3_banner.jpg" /></swiper-item>
-  <swiper-item><image src="../image/sys4_banner.jpg" /></swiper-item> -->
-  <swiper-item><image src="../image/sys5_banner.jpg" /></swiper-item>
+      <block wx:for="{{bannerArr}}" >
+  <swiper-item><image src="{{item.img.url}}" /></swiper-item>
+      </block>
 </swiper>
   </view>
 <!-- 选项 -->
 
 <image class="startconster" src="../Icon/webp.png"></image>
-  <view class="btnItem btnItem2" bindtap="AthuorClick">管理员</view>
-  <view class="btnItem btnItem1" bindtap="MImiClick">我们的秘密</view>
 
-  <view>
-
-    <view class="text_main">
-  <h1>为什么叫熊子路？</h1>
-  <rich-text>
-       熊的古代称呼是:子路。 时珍曰∶熊者雄也。熊字篆文象形。俗呼熊为猪熊,罴为人熊、马熊,各因形 似以为别也。《述异记》云∶在陆曰熊,在水曰能。故熊字从能。《续搜神记》 云∶熊居树孔中,东土人击树,呼为“子路”则起,不呼则不动也。又狒狒亦名人熊,见本条。 熊 ,形声。从能,炎省声。能,“熊”...”
-  </rich-text>
-
-</view>
-
-
+<view class="btnItems">
+  <view class="btnItem" bindtap="MImiClick">我们的秘密</view>
+  <view class="btnItem" bindtap="StudentLogin">学员登录</view>
+  <view class="btnItem" bindtap="StudentDetail">学员进度</view>
+  <view class="btnItem" bindtap="StudentSchedule">学习计划</view>
+  <view class="btnItem" bindtap="StudentVideo">视频教程</view>
+  <view class="btnItem" bindtap="StudentExercise">课后练习</view>
 </view>
 
 

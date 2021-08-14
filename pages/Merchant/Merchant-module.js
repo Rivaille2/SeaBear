@@ -39,6 +39,27 @@ var params={
 this.request(params);
 }
 
+// 将被点击成员申请的按钮返回管理员不同意申请的成员number账号
+getDeletSubmit(number,callback){
+  
+  var p={
+    number:number
+  }
+  var number1=JSON.stringify(p);
+
+
+console.log("agerr:"+number)
+//  传递参数到base基类的request（）
+var params={
+  url:'xiaobeisignin/deletesubmit?number='+number,
+  sCallback:function(data){
+   callback&&callback(data);
+  }
+};
+
+this.request(params);
+}
+
 
 }
 export{Merchant};

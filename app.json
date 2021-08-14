@@ -7,7 +7,16 @@
     "pages/AthorLogin/AthorLogin",
     "pages/Merchant/Merchant",
     "pages/Update/Update",
-    "pages/laboratory/laboratory"
+    "pages/Libraly/Library",
+    "pages/laboratory/laboratory",
+    "pages/StudentLogin/StudentLogin",
+    "pages/StudyProgress/StudyProgess",
+    "pages/StudentSchedule/StudentSchedule",
+    "pages/StudentVideo/StudentVideo",
+    "pages/StudentExercise/StudentExercise",
+    "pages/Teacherlogin/Teacherlogin",
+    "pages/TeacherMain/TeacherMain",
+    "pages/StudentMain/StudentMain"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,10 +30,9 @@
       "provider": "wx76a9a06e5b4e693e"
     },
     "routePlan": {
-      "version": "1.0.12",
+      "version": "1.0.13",
       "provider": "wx50b5593e81dd937a"
-      }
-    
+    }
   },
   "permission": {
     "scope.userLocation": {
@@ -42,10 +50,16 @@
         "text": "首页"
       },
       {
-        "selectedIconPath": "/pages/Icon/lu_start.png",
-        "iconPath": "/pages/Icon/lu_end.png",
+        "selectedIconPath": "/pages/Icon/line_start.png",
+        "iconPath": "/pages/Icon/line_end.png",
         "pagePath": "pages/text/text",
-        "text": "路线导航"
+        "text": "在线功能"
+      },
+      {
+        "selectedIconPath": "/pages/Icon/library_start.png",
+        "iconPath": "/pages/Icon/library_end.png",
+        "pagePath": "pages/Libraly/Library",
+        "text": "图书馆"
       },
       {
         "selectedIconPath": "/pages/Icon/lab_start.png",

@@ -6,6 +6,18 @@ Page({
     },
     
    onLoad:function(options){
+// 接收从sb_map注册页面出来的登陆成功的状态码
+    var  Sb_code=options.code;
+     if(Sb_code == 200){
+
+      wx.showToast({
+       image:"../image/good.gif",
+        title: '已经注册成功',
+        duration: 2500
+        })
+
+     }
+
     //  从缓存获取账号密码
      let scnumber=wx.getStorageSync('number');
      let scpwd=wx.getStorageSync('pwd');
@@ -74,7 +86,7 @@ if(scnumber && scpwd){
     
     //校验密码
     
-    if (pwd.length > 6) {
+    if (pwd.length < 6) {
     wx.showToast({
     icon: 'none',
     
@@ -105,8 +117,9 @@ if(scnumber && scpwd){
          wx.setStorageSync('number', number);
          wx.setStorageSync('pwd', pwd);
           wx.showToast({
+            image:"../image/good.gif",
             title: '登录成功',
-            duration: 1000
+            duration: 2000
           })
           wx.navigateTo({
             url: '../Update/Update'
@@ -114,8 +127,9 @@ if(scnumber && scpwd){
         }
         else {
           wx.showToast({
+            image:"../Icon/fail.gif",
             title: '登录失败',
-            duration: 1000
+            duration: 2000
           })
         }
 
@@ -133,6 +147,25 @@ if(scnumber && scpwd){
     })
 
   },
+
+  // 管理员点注册击事件
+AthuorClick:function(){
+
+  wx.navigateTo({
+    url: '../AthorLogin/AthorLogin',
+  })
+
+},
+
+  // 老师登录点击事件
+  Teacherlogin:function(){
+
+    wx.navigateTo({
+      url: '../Teacherlogin/Teacherlogin',
+    })
+  
+  },
+
 
     // 跳转到上一级页面
     black(){

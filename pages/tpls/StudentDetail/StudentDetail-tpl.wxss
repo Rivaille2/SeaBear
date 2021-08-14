@@ -1,0 +1,77 @@
+
+.products-box{
+  margin:0 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.products-item{
+  min-height:310rpx;
+  width: 99.5%;
+  border-radius: 20rpx;
+  margin-bottom: 15rpx;
+  background-color: #F5F6F5;
+  display: flex;
+  flex-direction:row;
+  position: relative;
+
+}
+.student_image{
+width: 220rpx;
+height: 200rpx;
+}
+
+.products-item-rigth{
+  width: 100%;
+  height: 200rpx;
+  line-height: 60rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.products-item-rigth .name{
+
+  font-size: 30rpx;
+  font-weight:bold;
+}
+
+.products-item-rigth .snap_address{
+
+  font-size: 30rpx;
+  font-weight:bold;
+
+}
+
+.products-item-rigth .price{
+  font-size: 34rpx;
+  font-weight: bold;
+  color: coral;
+}
+.receive{
+position: absolute;
+width: 130rpx;
+text-align:center ;
+right: 220rpx;
+top: 20rpx;
+font-weight: 400;
+padding: 13rpx;
+color: white;
+border-radius: 15rpx;
+z-index: 9999;
+}
+
+
+/* .receivecolor1{
+
+  background-color: rgb(87, 214, 104);
+} */
+
+.receivecolor2{
+  position: absolute;
+  right: 20rpx;
+  color: #666666;
+  /* background-color: red; */
+}

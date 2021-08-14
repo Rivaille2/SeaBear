@@ -50,7 +50,7 @@
 position: absolute;
 width: 130rpx;
 text-align:center ;
-right: 30rpx;
+right: 220rpx;
 top: 20rpx;
 font-weight: 900;
 padding: 13rpx;
@@ -65,4 +65,8 @@ z-index: 9999;
   background-color: rgb(87, 214, 104);
 }
 
-
+.receivecolor2{
+  position: absolute;
+  right: 20rpx;
+  background-color: red;
+}

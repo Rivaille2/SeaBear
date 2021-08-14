@@ -31,8 +31,20 @@ Page({
       key: 'Z53BZ-ZKNR3-U4I33-Y73YA-ATBUQ-NGFDK' //这里自己的key秘钥进行填充
     });
 
+    this.setData({
+      addressName:wx.getStorageSync('addressName'),
+      lagitude:wx.getStorageSync('lagitude'),
+      longitude:wx.getStorageSync('longitude')
+
+    })
+
+
   this.data.number=wx.getStorageSync('number');
   this.data.pwd=wx.getStorageSync('pwd');
+
+  console.log("addressName"+this.data.addressName)
+  console.log("lagitude"+this.data.lagitude)
+
   console.log("缓存里面的number："+this.data.number)
   console.log("缓存里面的number："+this.data.pwd)
   },
@@ -65,6 +77,11 @@ upadate:function(){
 
   let number = this.data.number
   
+  let lagitude = this.data.lagitude;
+
+  let longitude = this.data.longitude;
+
+
   // 将地址按照中国-广西自治区-玉林市-北流市
    let TrueAddress ="中国"+"-"+this.data.REGION_PROVINCE+"-"+this.data.REGION_CITY+"-"+this.data.REGION_COUNTRY;
   //  console.log(TrueAddress);
@@ -81,7 +98,7 @@ upadate:function(){
   
 if(flag){
 
-  if(!this.data.lagitude){
+  if(!this.data.lagitude || !this.data.REGION_COUNTRY){
     this.data.lagitude=this.data.lagitudestarstar;
     this.data.longitude=this.data.longitudestar;
     TrueAddress ="中国"+"-"+"广西壮族自治区"+"-"+"桂林市"+"-"+"雁山区";
@@ -104,16 +121,17 @@ wx.request({
     console.log(res.data)
 //如果返回值的code为200说明提交成功，等待通过审核，否则申请失败
     if (res.data.code == 200) {
-      wx.showToast({
-        icon:"none",
-        title: '修改成功',
-        duration: 1000
-      })
-        //  可以携带数据，一起跳转到login页面
-        wx.switchTab({
-          url: '../Start/Start',
-        })
 
+      wx.setStorageSync('addressName', TrueAddress);
+      wx.setStorageSync('lagitude',  lagitude);
+      wx.setStorageSync('longitude', longitude);
+
+      wx.showToast({
+        image:"../image/good.gif",
+        title: '修改成功',
+        duration: 3000
+      })
+  
     }
     else {
       wx.showToast({
@@ -218,7 +236,7 @@ mapclick: function() {
           REGION_CITY:null,  
           ADDRESS:null};  
         function regexAddressBean(address, addressBean){  
-            regex = /^(.*?[市州]|.*?地区|.*?特别行政区)(.*?[市区县])(.*?)$/g;  
+            regex = /^(.*?[市]|.*?自治州|.*?地区|.*?特别行政区)(.*?[市区县])(.*?)$/g;  
             var addxress = regex.exec(address);  
             addressBean.REGION_CITY=addxress[1];  
             addressBean.REGION_COUNTRY=addxress[2];  

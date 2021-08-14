@@ -28,42 +28,29 @@ height: 890rpx;
 z-index: 9999;  
 }
 
-.btnItem{
-position: absolute;
-width: 100rpx;
-height: 80rpx;
-left: 30rpx;
-font-size: 35rpx;
-font-style: initial;
-font-weight: 600;
-text-align: center;
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: #87CEFA;
+
+.btnItems {
+  position: absolute;
+  top: 460rpx;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 370px;
+  height: 250px;
 }
 
-.btnItem1{
-  width: 310rpx;
-  height: 80rpx;
+.btnItem {
+  width: 100px;
+  height: 100px;
+  margin: 23rpx;
+  font-size: 35rpx;
+  font-style: initial;
+  font-weight: 800;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #87CEFA;
   border-radius: 10rpx;
-  top: 430rpx;
-
-}
-
-.btnItem2{
-  width: 310rpx;
-  height: 80rpx;
-  border-radius: 10rpx;
-  top: 430rpx;
-  left: 400rpx;
-  }
-.text_main{
-width: 650rpx;
-height: 500rpx;
-font-size: 30rxp;
-font-weight: 550;
-margin-top: -740rpx;
-line-height: 70rpx;
-margin-left: 50rpx;
 }

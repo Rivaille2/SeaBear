@@ -1,0 +1,118 @@
+<view class="conter">
+<!-- 填写学生信息 -->
+<!--弹窗模块-->
+
+<!-- 0.初始化学生信息 -->
+<view class="modal-mask" bindtap="AllhideModal"  wx:if="{{AllshowModal}}"></view>
+<view class="allmodal-dialog" wx:if="{{AllshowModal}}">
+    <view class="modal-title">名字</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input placeholder-class="input-holder" type="text" maxlength="10" bindinput="inputChangenAll" class="input" value="{{stuName}}"></input>
+      </view>
+    </view>
+    <view class="modal-title">年级</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input placeholder-class="input-holder" type="text" maxlength="10" bindinput="inputChangenianji" class="input" value="{{stuNianji}}"></input>
+      </view>
+    </view>
+    <view class="modal-title">家庭地址</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input placeholder-class="input-holder" type="text" maxlength="15" bindinput="inputChangeaddress" class="input" value="{{stuAddress}}"></input>
+      </view>
+    </view>
+    <view class="modal-title">家长电话</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input placeholder-class="input-holder" type="text" maxlength="11" bindinput="inputChangenumber" class="input" value="{{stuNumber}}"></input>
+      </view>
+    </view>
+
+
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancelall" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="onConfirmall" data-status="confirm">确定</view>
+    </view>
+  </view>
+
+<!-- 1.年级 -->
+<view class="modal-mask" bindtap="nianjiup_hideModal" catchtouchmove="preventTouchMove" wx:if="{{nianji_showModal}}"></view>
+<view class="modal-dialog" wx:if="{{nianji_showModal}}">
+    <view class="modal-title">修改年级</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input placeholder-class="input-holder" type="text" maxlength="10" bindinput="inputChangenianji" class="input" value="{{stuNianji}}"></input>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancelnianji" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="onConfirmnianji" data-status="confirm">确定</view>
+    </view>
+  </view>
+<!-- 2.家庭地址 -->
+<view class="modal-mask" bindtap="address_hideModal" catchtouchmove="preventTouchMove" wx:if="{{address_showModal}}"></view>
+<view class="modal-dialog" wx:if="{{address_showModal}}">
+    <view class="modal-title">修改家庭地址</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input placeholder-class="input-holder" type="text" maxlength="10" bindinput="inputChangeaddress" class="input" value="{{stuAddress}}"></input>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCanceladdress" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="onConfirmaddress" data-status="confirm">确定</view>
+    </view>
+  </view>
+<!-- 3.家长电话 -->
+<view class="modal-mask" bindtap="number_hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">修改家长电话</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input placeholder-class="input-holder" type="text" maxlength="11" bindinput="inputChangenumber" class="input" value="{{stuNumber}}"></input>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancelnumber" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="onConfirmnumber" data-status="confirm">确定</view>
+    </view>
+  </view>
+
+
+
+<!-- 学生内容 -->
+<view class="student_top">
+  <image class="student_webp" src="../image/student_webp.jpg"></image>
+  <view class="itmen_left">
+    <!-- 学生的照片 -->
+           <image class="student_image" src="../image/student_image.jpg"></image>
+           <text class="name">姓名:{{StudentDetail.std_name}}</text>
+           <!-- code 200说明学生信息提交成功，同时隐藏这个信息提交按钮 -->
+           <view  class="btn_student {{code==201?'btn_student_null':''}}" bindtap="textbtn">
+            <text>填写学生信息</text>
+           </view>
+          
+   </view>
+  </view>
+    <view class="student_main">
+          <view class="products-item-rigth">
+            <view class="Items">
+              <text class="textItem name">年级：{{StudentDetail.std_grade}}</text>
+              <image class="arrow"   bindtap="nianjiup" src="../Icon/arrow.png"></image>
+            </view>
+           <view class="Items">
+            <text class="textItem snap_address">家庭地址：{{StudentDetail.std_address}}</text>
+            <image class="arrow"   bindtap="addressup" src="../Icon/arrow.png"></image>
+           </view>
+             <view class="Items">
+              <text class="textItem name">家长电话：{{StudentDetail.std_number}}</text>
+              <image class="arrow"  bindtap="number_nameup" src="../Icon/arrow.png"></image>
+             </view>
+          </view>
+    </view>
+
+    <button bindtap="back">返回</button>
+
+</view>

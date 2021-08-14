@@ -1,0 +1,17 @@
+<view class="conter">
+
+<view class="header">
+<text>Teacherlogin</text>
+</view>
+<view class="register">
+
+<input class="input" bindinput="getNumber" value="{{account}}" placeholder="请输入账号"></input>
+<input class="input" bindinput="getMiMa" value="{{password}}"  type="password"    placeholder="请输入密码"></input>
+<button class="btn"  bindtap="denglu">登录</button>
+<view class="zc" bindtap="black">
+  <text>返回</text>
+</view>
+</view>
+
+
+</view>

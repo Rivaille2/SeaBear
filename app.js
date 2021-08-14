@@ -13,7 +13,26 @@ App({
       }
     })
   },
+
+  onShow(e){
+    var that = this
+    // 获取设备机型
+    wx.getSystemInfo({
+        success:  res=>{
+          console.log('手机信息res'+res.model)
+          let model = res.model;
+            if (/iphone\sx/i.test(model) || (/iphone/i.test(model) && /unknown/.test(model))|| /iphone\s11/i.test(model)){
+                that.globalData.isIphoneX = true;
+            }else{
+                that.globalData.isIphoneX = false;
+            }
+        }
+    })
+   
+},
+
   globalData: {
-    userInfo: null
+    userInfo: null,
+    isIphoneX: false,//判断机型 
   }
 })

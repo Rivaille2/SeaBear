@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "注册页面",
+  "navigationBarTextStyle": "black"
 }

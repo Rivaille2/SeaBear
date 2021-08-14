@@ -120,14 +120,46 @@ Page({
 
     })
 
+    
+
+  },
+
+  getdelete:function(event){
+    // 获取被点击同意的order，也是获取元素number（身份证账号）的数据
+    var number = merchant.getDataset(event, 'account');
+    console.log("被同意的身份证："+number)
+ 
+    merchant.getDeletSubmit(number, (data) => {
+      this.setData({
+        // 商家订单数据
+        orderCode: data,
+      });
+      console.log('删除成功的code:', data);
+      if(data.code ==200){
+        wx.showToast({
+          image: '../Icon/a.png',
+          title: "已删除",
+          })
+      }
+      else if(data.code == 500){
+        wx.showToast({
+          image: '../Icon/fail.gif',
+          title: "删除失败",
+          })
+      }
+   
+
+    })
+
 
   },
 // 返回主页
 backtop:function(){
 
+  // 跳转到上一级
   wx.switchTab({
     url: '../Start/Start',
   })
-
+  
 },
 })

@@ -6,8 +6,18 @@ Page({
     },
     
    onLoad:function(options){
-  // this.data.pwd = options.pwd;
-  // this.data.number=options.number;
+    //  从缓存获取账号密码
+    let scnumber=wx.getStorageSync('anumber');
+    let scpwd=wx.getStorageSync('apwd');
+   //  当密码不是第一次输入的时候自动填上账号密码
+
+
+if(scnumber && scpwd){
+ this.setData({
+  number: scnumber,
+  pwd : scpwd
+ })
+}
 
   console.log(this.data.pwd)
    },
@@ -48,7 +58,7 @@ Page({
     
     if (number.length != 18) {
     wx.showToast({
-    icon: 'none',
+    image:"../Icon/fail.gif",
     
     title: '身份证为18位',
     
@@ -63,9 +73,9 @@ Page({
     
     //校验密码
     
-    if (pwd.length > 6) {
+    if (pwd.length < 6) {
     wx.showToast({
-    icon: 'none',
+      image:"../Icon/fail.gif",
     
     title: '密码至少6位',
     
@@ -90,18 +100,25 @@ Page({
         console.log(res.data)
 //如果返回值的code为200说明登陆成功
         if (res.data.code == 200) {
-          wx.showToast({
-            title: '登录成功',
-            duration: 1000,
-          })
+          wx.setStorageSync('anumber', number);
+          wx.setStorageSync('apwd', pwd);
+
+          // wx.showToast({
+          //   image:"../image/good.gif",
+          //   title: '登录成功',
+          //   duration: 3000,
+          // })
+
           wx.navigateTo({
             url: '../Merchant/Merchant',
           })
+          
         }
         else {
           wx.showToast({
+            image:"../Icon/fail.gif",
             title: '登录失败',
-            duration: 1000,
+            duration: 2000,
           })
     
         }
@@ -115,9 +132,9 @@ Page({
   // 跳转到上一级
   black(){
 
-  wx.navigateBack({
-    delta: 0
-  })
+    wx.navigateBack({
+      delta: 0,
+    })
   }
 
 })

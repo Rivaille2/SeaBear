@@ -63,6 +63,36 @@
         {
           "name": "pages/Update/Update",
           "pathName": "pages/Update/Update",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/StudyProgress/StudyProgess",
+          "pathName": "pages/StudyProgress/StudyProgess",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/Teacherlogin/Teacherlogin",
+          "pathName": "pages/Teacherlogin/Teacherlogin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/TeacherMain/TeacherMain",
+          "pathName": "pages/TeacherMain/TeacherMain",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/StudentMain/StudentMain",
+          "pathName": "pages/StudentMain/StudentMain",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/StudentExercise/StudentExercise",
+          "pathName": "pages/StudentExercise/StudentExercise",
           "scene": null
         }
       ]

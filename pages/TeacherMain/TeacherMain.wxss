@@ -1,0 +1,180 @@
+@import "../tpls/base.wxss";
+@import "../tpls/StudentDetail//StudentDetail-tpl.wxss";
+
+
+.conter{
+width: 100%;
+
+}
+
+.show_view_hide{
+  display: none;
+
+}
+
+.show_view_show{
+  display: block;
+
+}
+
+
+
+.std_header{
+  width: 100%;
+  height: 400rpx;
+background-color: #87CEFA;
+position: relative;
+}
+
+.std_detail .picker{
+margin-top: 25rpx;
+font-size: 34rpx;
+font-weight: 800;
+}
+
+.std_detail .picker text{
+color: rgb(80, 191, 255);
+  font-weight: 800;
+  }
+
+.title_tab{
+  position: absolute;
+  width: 70%;
+  height: 70rpx;
+  margin-top: 200rpx;
+  margin-left: 110rpx;
+  color: aliceblue;
+  /* background-color: brown; */
+  
+  }
+
+   .top_itme1{
+     padding: 95rpx;
+    font-size: 38rpx;
+    font-weight: 800;
+    
+  }
+  .top_itme2{
+   font-size: 38rpx;
+   font-weight: 800;
+ }
+
+.std_header image{
+position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.std_all{
+  position: absolute;
+  width: 98%;
+  height: 1055rpx;
+  border-radius: 15rpx;
+  top: 280rpx;
+  margin-left: 9rpx;
+  /* background-color:#cccccc; */
+}
+
+
+.std_detail{
+width: 100%;
+height: 200rpx;
+margin-top: 30rpx;
+margin-left: 170rpx;
+margin-bottom: 30rpx;
+}
+
+.std_detail .std_name{
+width: 400rpx;
+height: 60rpx;
+padding-left: 10rpx;
+border-radius: 5rpx;
+border: 2rpx solid;
+}
+
+.std_detail .std_account{
+  width: 400rpx;
+  height: 60rpx;
+  margin-top: 60rpx;
+  padding-left: 10rpx;
+  border-radius: 5rpx;
+  border: 2rpx solid;
+  }
+
+.weui-uploader__bd {
+  width:100%;
+  float:left;
+  margin-top:35rpx;
+  margin-left:40rpx;
+  padding-bottom:120rpx;
+  margin-bottom: -4px;
+  margin-right: -9px;
+  overflow: hidden;
+}
+.weui-uploader__file {
+  float: left;
+  margin-right: 65rpx;
+  padding: 10rpx;
+  margin-bottom: 9px;
+}
+.image_view_css{
+  width:60rpx;
+  height: 60rpx;
+  position: absolute;
+  z-index: 5;
+  margin-left: 65px;
+  margin-top: -25rpx
+}
+.weui-uploader__img {
+  display: block;
+  width: 79px;
+  height: 79px;
+}
+.weui-uploader__input-box {
+  float: left;
+  position: relative;
+  margin-right: 9px;
+  margin-bottom: 9px;
+  width: 77px;
+  height: 77px;
+  border: 1px solid #d9d9d9;
+}
+.weui-uploader__input-box:before, .weui-uploader__input-box:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #d9d9d9;
+}
+.weui-uploader__input-box:before {
+  width: 2px;
+  height: 39.5px;
+}
+.weui-uploader__input-box:after {
+  width: 39.5px;
+  height: 2px;
+}
+.weui-uploader__input {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.hideTrue {
+  display: none
+}
+
+.btn{
+margin-top: 500rpx;
+
+}
+.btn button{
+  margin-top: 40rpx;
+  background-color: #87CEFA;
+}

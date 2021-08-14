@@ -7,6 +7,9 @@
           <view class="receive receivecolor1" bindtap="getreceive" data-account="{{item.account}}">
                <text>同意</text>
           </view>
+          <view class="receive receivecolor2" bindtap="getdelete" data-account="{{item.account}}">
+               <text>删除</text>
+          </view>
               <view class="products-item-rigth">
                 <text class="name">成员:{{item.name}}</text>
                   <text class="name">账号：{{item.account}}</text>

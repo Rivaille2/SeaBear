@@ -1,0 +1,23 @@
+<!-- 实现左右联动效果 -->
+<view class="link">
+	<!-- 左边 -->
+	<scroll-view class="left" scroll-y scroll-with-animation scroll-top="{{scrollTops}}">
+		<view class="item {{tabCur===index?'active':''}}" wx:for="{{categoryTypeArr}}" wx:key="index" wx:if="{{index<5}}" data-index="{{index}}" bindtap="tabNav">{{item.name}}</view>
+	</scroll-view>
+
+	<!-- 右边 -->
+	<scroll-view class="right" scroll-y scroll-with-animation scroll-into-view="scroll-{{rightCur}}" bindscroll="scrollLink">
+		<!-- 重点： id="scroll-{{index}}"  这个必须要有 不然实现不了左边联动右边的效果-->
+		<view wx:for="{{categoryTypeArr}}" wx:key="{{index}}" wx:if="{{index==1}}" class="right-cont" id="scroll-{{index}}">
+			<view class="content">
+				<view class="list-item" wx:for="{{catedata}}" wx:key="{{indexs}}" wx:for-index="indexs" wx:for-item="items">
+					<!-- <view class="title">{{items.id}}</view> -->
+					<view class="update_time">更新日期：{{items.update_time}}</view>
+					<!-- 链接的拼接 -->
+          <image src="https://hemantower.com/public/images{{items.url}}" mode="aspectFill" bindtap="previewImage" data-index="{{indexs}}"></image>
+          
+        </view>
+			</view>
+		</view>
+	</scroll-view>
+</view>
