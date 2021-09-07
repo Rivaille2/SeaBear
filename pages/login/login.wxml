@@ -1,7 +1,7 @@
 <view class="conter">
 
-<view class="header">
-<text>BearsLogin</text>
+  <view class="header">
+<image src="https://hemantower.com/public/images/login.jpg"></image>
 </view>
 
 <view class="register">

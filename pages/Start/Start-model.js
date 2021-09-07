@@ -38,6 +38,39 @@ constructor(){
    }
 
 
+//1. 从服务器获取文章的数据信息
+
+getArticel(callback){
+  //  传递参数到base基类的request（）
+var params={
+   url:'getArticle',
+   sCallback:function(res){
+
+    callback&&callback(res);
+   }
+};
+
+this.request(params);
+
+ }
+
+
+//1. 从服务器获取文章的数据信息
+
+getArticelDetail(id,callback){
+  //  传递参数到base基类的request（）
+var params={
+   url:'getArticleById/'+id,
+   sCallback:function(res){
+
+    callback&&callback(res);
+   }
+};
+
+this.request(params);
+
+ }
+
 
 
 }

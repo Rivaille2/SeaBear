@@ -1,4 +1,5 @@
 import {Config} from '../utils/config.js';
+import { Token } from './token.js';
 
 class Base{
 constructor(){

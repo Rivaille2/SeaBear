@@ -12,6 +12,20 @@ Page({
   },
 
 onLoad: function (options) {
+    // 获取学生账号
+    let sc_account=wx.getStorageSync('sc_account');
+    // 获得缓存积分
+   var jifen= wx.getStorageSync('jifen');
+// 年级id，和年级名字
+   var cate_id = options.cate_id;
+   var cate_name = options.cate_name;
+   this.setData({
+    signfens: jifen,
+    account:sc_account,
+    name: cate_name,
+    cate_id:cate_id
+  })
+  
 
   this._loadDate();
  
@@ -21,12 +35,15 @@ onLoad: function (options) {
  // callback是回调函数，反复回调函数如果有值则继续回调直到没有，也就是六个数据回调完成就结束
  _loadDate:function()
  {
-  studentExercise.getAllQuestions((data)=>{
+  //  年级列表id，用于区分年级发布练习
+   var  grade_id = this.data.cate_id;
+  // 根据年级回去练习题
+  studentExercise.getAllQuestions(grade_id,(data)=>{
     this.setData({
       questions:data,
     });
-   var q=JSON.stringify(data);
-    console.log("questions:"+q)
+  //  var q=JSON.stringify(data);
+    console.log("questions:",data)
   })
 
  },
@@ -131,7 +148,34 @@ console.log("leg:"+detail[number].arrays.length)
       icon: '../image/good.gif',
       duration: 2000
     })
+
+// 成功上传加积分
+var D=(new Date()).getDate().toString();
+var stD=wx.getStorageSync('ExepD')
+console.log("d:"+D)
+console.log("Sd:"+stD)
+console.log("save:"+this.data.signfens)
+if(D != stD){
+  wx.setStorageSync('ExepD', D);
+
+  this.setData({
+    signfens: this.data.signfens+= 10
+  })
+
+  this.SaveScore(this.data.account,this.data.signfens);
+
+  wx.showToast({
+    icon: 'success',
+    title: '练习签到成功',
+    duration: 2000
+  })
+
+
+}
+
+
    }else{
+
     wx.showToast({
       title: '已经提交过了',
       image: '../image/good.gif',
@@ -147,12 +191,40 @@ console.log("leg:"+detail[number].arrays.length)
  
   },
 
+// 向服务器请求保存score
+SaveScore:function(std_id,score){
+
+  wx.request({
+    url: 'https://hemantower.com/public/index.php/api/v1/saveScore/'+std_id+'?score='+score,
+    method: "post",
+    header: {
+      'content-type': 'application/json' // 设置传输格式为json格式，默认如此
+    },
+    success(res) {
+      if (res.data.code == 201) {
+        wx.showToast({
+          title: '积分保存成功',
+          icon: 'success'
+        })
+  
+      } else if (res.data.code == -1) {
+        wx.showToast({
+          title: '服务器连接失败',
+          icon: 'none'
+        })
+      }
+    },
+  })
+
+
+},
+
 // 返回首页
 // 返回上一级
 black:function(){
 
-  wx.switchTab({
-    url: '../Start/Start',
+  wx.navigateBack({
+    delta: 0,
   })
 }
 

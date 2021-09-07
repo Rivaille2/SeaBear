@@ -1,0 +1,28 @@
+<import src="../tpls/ListCategory/ListCategory-tpl.wxml" />
+
+<view class="conter">
+ <!-- 课后练习 -->
+ <view class="product">
+
+<view class="top">
+  <view class="center">
+
+    <view class="center_top">
+      <image class="rank_icon" src="/pages/Icon/ci.png"></image>
+      <text>----- 课后练习 -----</text>
+    </view>
+    <!-- <view class="center_down">
+      <view class="center_rank" bindtap="toNone">
+        <image class="rank_icon" src="/pages/Icon/rank_icon.png"></image>
+        <text class="rank_text">排名人数：{{number}}</text>
+      </view>
+    </view> -->
+  </view>
+  <image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
+</view>
+</view>
+
+<template is='WordListSign' data="{{genreArr:gradeArr}}"></template>
+
+
+</view>

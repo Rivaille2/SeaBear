@@ -1,0 +1,27 @@
+<import src="../../tpls/QuestionSignInModel/QuestionSignInModel-tpl.wxml" />
+<template name="tabmodel">
+
+  <view class='topTabSwiper'>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>学习资料</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>单词打卡</view>
+    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent'>关注</view>
+</view>
+
+<swiper current="{{currentData}}" class='swiper'  duration="300" bindchange="bindchange">
+  <swiper-item>
+    <view class="swiper_con">
+        <video src="https://hemantower.com/public/video{{genreArr.vido_url}}" id='myVideo'></video>
+        <button class="btn1" bindtap="videoplay"> 播放 </button>
+      <button class="btn2" bindtap="videopause"> 暂停 </button>
+      </view>
+
+</swiper-item> 
+  <swiper-item>
+    <view class='swiper_con swiper_conter'>
+      <template is="questionsmodel" data="{{questions:questions,currentData:currentData,curring:currings,number:numbers,answer:answers,errorquestion,flag:flags,showModal:showModal}}"></template>
+  </view>
+</swiper-item>
+  <swiper-item><view class='swiper_con'>已经在开发了！</view></swiper-item>  
+</swiper>
+
+</template>

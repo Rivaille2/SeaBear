@@ -1,0 +1,16 @@
+<!--  单元分类列表模板 -->
+<template name="StdDetailListSign">
+  <view class="products-box">
+  <block wx:for="{{grade}}">
+
+      <view class="products-item" bindtap="gradeListTap"  data-id="{{item.grad}}">
+              <view class="products-item-rigth">
+                <text class="name">{{item.grad}}年级</text>
+                <image class="arrow"   bindtap="gradeListTap" src="../Icon/jian.png"></image>
+              </view>
+              
+      </view>
+
+  </block>
+</view>
+</template>

@@ -19,25 +19,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let std_id=wx.getStorageSync('std_id');
+    // let std_id=wx.getStorageSync('std_id');
+    let std_grade= wx.getStorageSync('grade');
     this.setData({
-      std_id:std_id
+      std_grade:std_grade
     })
-    this._loadDate(std_id);
+    this._loadDate(std_grade);
    },
  
      /*加载所有数据*/
  // callback是回调函数，反复回调函数如果有值则继续回调直到没有，也就是六个数据回调完成就结束
-   _loadDate:function(std_id,callback)
+   _loadDate:function(std_grade,callback)
    {
     studentSchedule.getCategoryType((categorydata)=>{
       this.setData({
         categoryTypeArr:categorydata,
         loadingHidden: true
       });
-     //  一定要在回调里面进行获取分类详情的方法调用
+
+
+     //  个人提升 的数据
  // 为什么要在回调函数里面，因为为了保证每次都可以拿到第一次返回的数据id
- studentSchedule.getstudentsByCategory(this.data.tabCur+6,std_id,(data)=>{
+ studentSchedule.getstudentsByCategory(this.data.tabCur+6,std_grade,(data)=>{
  // 这个是设置刚刚点进去的时候显示的数据。
       var dataObj={
       students:data,
@@ -57,11 +60,15 @@ Page({
   
    },
 
+
+
+
+
   //  请求数据
  studentImage:function(){
-var std_id=this.data.std_id;
+var std_grade=this.data.std_grade;
 // 为什么要在回调函数里面，因为为了保证每次都可以拿到第一次返回的数据id
-studentSchedule.getstudentsByCategory(this.data.tabCur+1,std_id,(data)=>{
+studentSchedule.getstudentsByCategory(this.data.tabCur+1,std_grade,(data)=>{
       
       this.setData({
         catedata:data

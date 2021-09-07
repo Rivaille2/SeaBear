@@ -1,0 +1,5 @@
+<!-- <button bindtap="send">发送订阅消息</button> -->
+
+<view class="conter">
+  <image src="https://hemantower.com/public/images/glin.jpg"></image>
+</view>

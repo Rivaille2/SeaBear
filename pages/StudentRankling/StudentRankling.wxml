@@ -1,0 +1,5 @@
+<import src="../tpls/RankingModel/RankingModel-tpl.wxml" />
+<view class="conter">
+ <template is='rankingModel' data="{{list,number:number,score_flage:score_flage}}"></template>
+
+</view>

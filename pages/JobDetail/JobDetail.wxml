@@ -1,0 +1,31 @@
+
+<import src="../tpls/StudentModel/StudentModel-tpl.wxml" />
+
+<view class="conter">
+ <!-- 计时的顶部布局 -->
+ <view class="product">
+
+<view class="top">
+  <view class="center">
+    <view class="center_top">
+      <image class="rank_icon" src="/pages/image/student_image.jpg"></image>
+    <text>学生情况中心</text>
+    
+    </view>
+    <!-- <view class="center_down">
+      <view class="center_rank" bindtap="toNone">
+        <text class="rank_text">视频数量：4{{number}}</text>
+      </view>
+    </view> -->
+  </view>
+  <image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
+</view>
+</view>
+
+<!-- 单元列表分类 -->
+<view class="product">
+  <template is="stduentModel" data="{{videoDanArr,currentData:currentData,grade}}"></template>
+</view>
+
+
+</view>

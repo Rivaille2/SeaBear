@@ -1,0 +1,33 @@
+
+<view class="conter">
+ <!-- 视频播放的顶部布局 -->
+ <view class="product">
+
+<view class="top">
+  <view class="center">
+    <view class="center_top">
+      <image class="rank_icon" src="/pages/Icon/niao.png"></image>
+    <text>学习资料</text>
+    </view>
+
+  </view>
+  <image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
+</view>
+</view>
+
+
+
+<view class="item-box">
+  <view class="items">
+    <view wx:for="{{VideoArr}}"  wx:key="{{index}}"  class="item"> 
+      <view class="inner txt">
+       <i> {{item.title}}</i>
+      </view>
+      <view class="videoPlayer">
+        <video src="https://hemantower.com/public/video{{item.vido_url}}"  id="myVideo{{index}}" bindtap="videoPlay" data-index='{{index}}'  bindwaiting='waitting' binderror='error'></video>
+      </view>
+    </view>
+  </view>
+</view>
+
+</view>

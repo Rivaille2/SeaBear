@@ -1,6 +1,7 @@
 .conster{
 width: 200%;
-height: 1000rpx;
+height: 1250rpx;
+background-color: #f3f0f0;
 position: relative;
 }
 .sp_top{
@@ -13,7 +14,7 @@ border-radius: 15rpx;
 
 swiper{
   width: 50%;
-  height: 400rpx;
+  height: 330rpx;
   border-radius: 20rpx;
 }
 swiper image{
@@ -31,26 +32,152 @@ z-index: 9999;
 
 .btnItems {
   position: absolute;
-  top: 460rpx;
+  top: 320rpx;
+  left: 0rpx;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  width: 370px;
+  width: 380px;
   height: 250px;
 }
 
 .btnItem {
-  width: 100px;
-  height: 100px;
-  margin: 23rpx;
-  font-size: 35rpx;
+  margin: 3rpx;
+  margin-top: 75rpx;
+  font-size: 27rpx;
   font-style: initial;
-  font-weight: 800;
   text-align: center;
+  color: #666666;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #87CEFA;
+  background-color: #ffffff;
   border-radius: 10rpx;
+  /* background: rgb(226, 208, 208); */
+  border-radius: 10rpx;
+  box-shadow: 7rpx 7rpx 9rpx 10rpx #cdcfcf;
 }
+
+
+.start_item{
+   width: 160rpx;
+   height: 120rpx;
+   margin-left: 20rpx;
+  position: relative;
+}
+
+.my_icon{
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  margin: 81rpx;
+  margin-top: 88rpx;
+  margin-left: 55rpx;
+}
+
+.text_btn{
+  position: absolute;
+  width: 140rpx;
+  height: 80rpx;
+  margin-top: 165rpx;
+  margin-left: 20rpx;
+}
+
+.qiang{
+  position: absolute;
+  width: 100%;
+  height: 280rpx;
+  background-color: #ffffff;
+  top: 585rpx;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.qiang .qiang_text{
+  width: 300rpx;
+  height: 80rpx;
+  margin-top: 65rpx;
+  margin-left: -25rpx;
+}
+
+.qiang image{
+
+  width: 200rpx;
+  height: 160rpx;
+  margin: 54rpx;
+  border-radius: 10rpx;
+  align-content: center;
+
+}
+
+.qiang .text_btn{
+  width: 300rpx;
+  height: 30rpx;
+  margin-top: 45rpx;
+  margin-left: -25rpx;
+  color: #666666;
+}
+
+.qiang .btn{
+
+width: 170rpx;
+height: 48rpx;
+font-size: 28rpx;
+margin-top: 165rpx;
+margin-left: -20rpx;
+border-radius: 30rpx;
+color: cornsilk;
+background-color: rgb(238, 100, 50);
+
+}
+
+.qiang .btn text{
+
+margin-left: 30rpx;
+
+font-weight: 600;
+
+}
+
+.reading{
+  position: absolute;
+  margin-top: 500rpx;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 270rpx;
+  background-color: #ffffff;
+}
+
+.reading .read_item{
+width: 326rpx;
+height: 200rpx;
+margin-top: 38rpx;
+margin-left: 32rpx;
+border-radius: 15rpx;
+background-color: rgb(247, 236, 232);
+}
+
+.reading .read_item text{
+  margin-left: 30rpx;
+  }
+  .reading .read_conter{
+   width: 90%;
+   margin-top: 5rpx;
+   margin-left: 20rpx;
+   font-size: 30rpx;
+   color: #666666;
+  }
+
+  .reading .reading_icon{
+    width: 68rpx;
+    height: 68rpx;
+    margin: 81rpx;
+    margin-top: -15rpx;
+    margin-left: 265rpx;
+  }

@@ -1,0 +1,18 @@
+<!--  商家订单列表模板 -->
+<template name="competitor">
+<view class="products-box">
+  <block wx:for="{{students}}">
+     <view class="products-item">
+          <view class="receive receivecolor2" bindtap="getdelete" data-account="{{item.account}}">
+            
+          </view>
+          <view class="itmen_left">
+           <image class="student_image" src="https://hemantower.com/public/images/student_image.jpg"></image>
+          </view>
+              <view class="products-item-rigth">
+                <text class="name">姓名:{{item.std_name}}</text>
+              </view>
+      </view>
+  </block>
+</view>
+</template>

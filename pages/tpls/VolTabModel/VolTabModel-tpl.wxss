@@ -1,0 +1,40 @@
+@import "../../tpls//QuestionSignInModel/QuestionSignInModel-tpl.wxss";
+@import "../ListCategory//ListCategory-tpl.wxss";
+
+.tab {
+  float: left;
+  width: 33.3333%;
+  height: 84rpx;
+  text-align: center;
+  padding: 24rpx 0;
+}
+ 
+.topTabSwiper {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  zoom: 1;
+}
+ 
+.topTabSwiper:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+ 
+.tabBorer {
+  border-bottom: 1px solid #87CEFA;
+  color: #87CEFA;
+}
+ 
+.swiper {
+  width: 100%;
+ height: 1200rpx;
+}
+ 
+.swiper_con {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 10rpx 0;
+}
+

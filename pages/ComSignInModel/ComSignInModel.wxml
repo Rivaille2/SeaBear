@@ -1,0 +1,10 @@
+<import src="../tpls/ComTabModel/ComTabModel-tpl.wxml" />
+
+<view class="conter">
+<!-- tab  切换栏 -->
+<view>
+  <template is="Comstiontabmodel" data="{{genreArr,currentData:currentData,isShow:isShow,date:date,pics}}"></template>
+</view>
+
+
+</view>

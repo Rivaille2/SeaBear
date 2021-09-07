@@ -1,26 +1,60 @@
 <import src="../tpls/StudentDetail/StudentDetail-tpl.wxml" />
+<import src="../tpls/CompetitionDetail/CompetitionDetail-tpl.wxml" />
+
 <view class="conter">
 
 <view class="std_header">
 <image src="../image/student_webp.jpg"></image>
 <view class="title_tab">
-<text class="top_itme1" bindtap="studentAlltap">学生信息</text>
-<text class="top_itme2" bindtap="studentsumittap">上传数据</text>
+<text class="top_itme1" bindtap="studentAlltap">兑换情况</text>
+<text class="top_itme1" bindtap="studentsumittap">个人图片</text>
+<text class="top_itme1" bindtap="gradesumittap">年级图片</text>
+<text class="top_itme1" bindtap="videosumittap">上传视频</text>
+<text class="top_itme1" bindtap="Compsumittap">视频教学</text>
+<text class="top_itme1" bindtap="jobsumittap">作业情况</text>
 </view>
 
 </view>
 
 <!-- =========== 显示学生 ====== -->
-  <view class="std_all {{std_showView?'show_view_show':'show_view_hide'}}">
+  <view class="std_all {{std_showView == 1?'show_view_show':'show_view_hide'}}">
 
-    <view class="studentDetail">
+    <!-- <view class="studentDetail">
       <template is="students" data="{{students:studentsAll}}"></template>
-    </view>
+    </view> -->
+
+    <view class="products-box">
+  <block wx:for="{{GiftAllArr}}">
+     <view class="gifts-item">
+  <!-- 接收按钮 -->
+     
+                 <view class="name" >         
+                      <text>领取者:{{item.name}}</text>
+                    </view>
+                    <view class="code" >         
+                      <text>领取码:{{item.conversion_code}}</text>
+                    </view>
+
+          <view class="receive receivecolor2" bindtap="setstatic" data-id="{{item.id}}" data-score="{{item.gift_score}}">
+               <text>确认领取</text>
+          </view>
+          
+              <view class="gifts-item-rigth">
+                <image src="https://hemantower.com/public/images{{item.con_img_id}}"></image>
+              </view>
+
+              <view class="bott_del">
+                <text>详情：{{item.description}}</text>
+              </view>
+      </view>
+  </block>
+</view>
+  
 
   </view>
 
   <!-- =========================上传数据—————————————— -->
-<view class="conter_main {{std_detail?'show_view_show':'show_view_hide'}}">
+<view class="conter_main {{std_detail == 1?'show_view_show':'show_view_hide'}}">
 
   <view class="std_detail">
     <!-- bindinput="name" 键盘输入时触发的事件-->
@@ -69,8 +103,136 @@
 
 </view>
 
+</view>
+
+
+ <!-- =========================上传年级图片数据—————————————— -->
+ <view class="conter_main {{std_grade == 1?'show_view_show':'show_view_hide'}}">
+
+<view class="std_detail">
+  <!-- bindinput="name" 键盘输入时触发的事件-->
+  <picker bindchange="bindPickerGrade" value="{{indexs}}" range="{{arrayGrade}}">
+      <view class="picker">
+        年级选择：  <text>{{arrayGrade[indexs]}}</text> 
+       <!-- 学生Id： {{std_id}} -->
+      </view>
+    </picker>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        课目选择：<text>{{array[index]}}</text>
+        <!-- {{std_cate}} -->
+      </view>
+    </picker>
+<!-- 日期选择器 -->
+    <picker bindchange="bindDateChange" value="{{index}}" range="time" mode="date">
+      <view class="picker">
+        时间选择：<text>{{date}}</text>
+      </view>
+    </picker>
+
+ </view>
+
+<view class="weui-uploader__bd">
+<view class="weui-uploader__files">
+   <block wx:for="{{pics}}" wx:for-item="image" wx:key="item">
+    <view class="weui-uploader__file">
+      <image src="../image/scanCode_delete.png" wx:if="{{image!=''}}"
+      bindtap="img_delete" class="image_view_css" data-index="{{index}}" 
+      data-sign="{{disabl}}"></image>
+      <image class="weui-uploader__img" wx:if="{{image!=''}}" src="{{image}}" bindtap="previewImage" data-src="{{image}}"></image> 
+      <!--这里是显示图片在页面上用for循环遍历--> 
+    </view>
+   </block>
+ </view>
+ 
+ <view class="weui-uploader__input-box {{isShow?'true':'hideTrue'}}">
+   <view class="weui-uploader__input" bindtap="chooseImage" data-sign="{{disabl}}"></view>
+ </view>
+
+ <view class="btn">
+     <button bindtap="uploadimggrade">上传图片</button>
+     <button bindtap="black">返回</button>
+ </view>
+
+</view>
+
+</view>
+
+
+
+<!-- 视频上传 -->
+<view class="video_item  {{std_video ==1? 'show_view_show':'show_view_hide'}}">
+
+<video class="video_play" id='video{{idx}}' show-center-play-btn="{{true}}" src='{{videoUrl}}' controls="true" objectFit="cover">
+</video>
+
+<view class="video_input">
+<!-- 上传打卡分类的id -->
+
+  <picker bindchange="bindgenreChange" value="{{index}}" range="{{genreArr}}">
+        <view class="picker">
+          章节选择：<text>{{genreArr[index]}}</text>
+          <!-- {{std_cate}} -->
+        </view>
+      </picker>
 
 
 </view>
+
+<view class="video_btn">
+     <button class="start_btn"   bindtap="addVideoTap">添加视频</button>
+
+     <button class="start_btn" bindtap="black">返回</button>
+ </view>
+</view>
+
+
+<!-- =========== 视频教程上传 ====== -->
+
+
+<view class="video_item  {{std_Comp == 1?'show_view_show':'show_view_hide'}}">
+
+<video class="video_play" id='video{{idx}}' show-center-play-btn="{{true}}" src='{{videoUrl}}' controls="true" objectFit="cover">
+</video>
+
+<view class="video_input">
+<!-- 上传打卡分类的id -->
+
+  <picker bindchange="bindgradeChange" value="{{index}}" range="{{gradeArr}}">
+        <view class="picker">
+          年级选择：<text>{{gradeArr[index]}}</text>
+         
+        </view>
+      </picker>
+
+
+</view>
+
+<view class="video_input">
+<!-- 上传打卡分类的id -->
+
+  <picker bindchange="bindgradeId" value="{{index}}" range="{{gradecateArr}}">
+        <view class="picker">
+          年级单元选择：<text>{{gradecateArr[index]}}</text>
+         
+        </view>
+      </picker>
+
+</view>
+
+<view class="video_btn">  
+     <button class="start_btn"   bindtap="addVideonianTap">添加视频</button>
+
+     <button class="start_btn" bindtap="black">返回</button>
+ </view>
+</view>
+
+<!-- <view class="std_all {{std_Comp == 1?'show_view_show':'show_view_hide'}}">
+
+<view class="studentDetail">
+  <template is="competitor" data="{{students:studentsAll}}"></template>
+</view>
+</view> -->
+
 
 </view>

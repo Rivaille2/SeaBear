@@ -10,10 +10,13 @@
            <image class="student_image" src="https://hemantower.com/public/images/student_image.jpg"></image>
           </view>
               <view class="products-item-rigth">
+                <text class="name">账号:{{item.account}}</text>
+                  <text class="name">密码：{{item.password}}</text>
                 <text class="name">姓名:{{item.std_name}}</text>
                   <text class="name">年级：{{item.std_grade}}</text>
                   <text class="snap_address">家庭地址：{{item.std_address}}</text>
                   <text class="name">家长电话：{{item.std_number}}</text>
+                  <text class="name">学生积分：{{item.std_score}} 分</text>
               </view>
       </view>
   </block>

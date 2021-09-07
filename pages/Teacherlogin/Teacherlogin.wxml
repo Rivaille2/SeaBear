@@ -1,8 +1,9 @@
 <view class="conter">
 
-<view class="header">
-<text>Teacherlogin</text>
+  <view class="header">
+<image src="https://hemantower.com/public/images/login.jpg"></image>
 </view>
+
 <view class="register">
 
 <input class="input" bindinput="getNumber" value="{{account}}" placeholder="请输入账号"></input>

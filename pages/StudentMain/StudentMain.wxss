@@ -2,11 +2,129 @@
 padding: 0%;
 margin: 0%;
 }
-.student_top .student_webp{
-width: 100%;
-height: 320rpx;
-position: relative;
+/* 头 */
+
+Page {
+  font-size: 14px;
 }
+
+.top {
+  width: 100%;
+  height: 220px;
+  background: #23EBB9;
+  padding-top: 15px;
+  position: relative;
+}
+
+.center {
+  width: 95%;
+  height: 150px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.center_top {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 80px;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.center_img {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.center_img image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.center_img .user_head {
+  width: 100%;
+  height: 100%;
+}
+
+.center_info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rpx;
+  margin-left: 30px;
+}
+
+.center_name {
+  font-size: 20px;
+}
+
+.center_phone {
+  color: #BEBEBE;
+}
+
+.center_down {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 35px;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+
+.center_rank {
+  width: 50%;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  z-index: 9;
+}
+
+.rank_text {
+  height: 35px;
+  line-height: 35px;
+  margin-left: 10rpx;
+  color: #AAAAAA;
+}
+.rank_text text{
+color: rgb(238, 100, 50);
+}
+
+
+.center_rank image {
+  width: 35px;
+  height: 35px;
+}
+
+.center_score {
+  width: 50%;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+}
+
+.center_score image {
+  width: 35px;
+  height: 35px;
+}
+
+.gif-wave {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  mix-blend-mode: screen;
+  height: 100rpx;
+}
+
+
 .itmen_left{
   position: absolute;
 width: 100%;
@@ -33,8 +151,8 @@ border-radius: 10rpx;
   width: 210rpx;
   height: 70rpx;
   font-size:30rxp;
-  margin-top: -140rpx;
-  margin-left: 465rpx;
+  margin-top: -10rpx;
+  margin-left: 425rpx;
   text-align: center;
   display: flex;
   padding-left: 20rpx;
@@ -49,20 +167,63 @@ border-radius: 10rpx;
 
     }
 
+    
+.btnItems {
+  width: 95%;
+  height: 300rpx;
+  top: 460rpx;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 370px;
+  height: 120px;
+}
+
+.btnItem {
+  width: 100px;
+  height: 100px;
+  margin: 22rpx;
+  font-size: 35rpx;
+  color: #666;
+  font-style: initial;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rpx;
+  /* background: rgb(226, 208, 208); */
+  border-radius: 10rpx;
+  box-shadow: 7rpx 7rpx 9rpx 10rpx #cdcfcf;
+}
+
+.my_icon{
+width: 60rpx;
+height: 60rpx;
+
+}
+
+.products-item-rigth{
+   width: 94%;
+   margin-left: 22rpx;
+  border-radius: 10rpx;
+  box-shadow: 7rpx 7rpx 9rpx 10rpx #cdcfcf;
+
+}
 
   .textItem {
     width: 333px;
     height: 50px;
     margin: 23rpx;
+    margin-left: 100rpx;
     font-size: 35rpx;
     font-style: initial;
-    font-weight: 800;
+    color: #666;
     text-align: center;
     display: flex;
     padding-left: 20rpx;
     justify-content: left;
     align-items: center;
-    background-color: #87CEFA;
     border-radius: 10rpx;
   }
 
@@ -70,6 +231,14 @@ border-radius: 10rpx;
     position: relative;
   }
 
+  .bottom_icon
+{
+    position: absolute;
+    width: 70rpx;
+    height: 70rpx;
+    margin-top: 20rpx;
+    margin-left: 15rpx;
+}
   .arrow{
   position: absolute;
    width: 47rpx;
@@ -77,6 +246,12 @@ border-radius: 10rpx;
    top: 30rpx;
    right: 50rpx;
   }
+
+  .student_main{
+   margin-bottom: 180rpx;
+  
+  }
+
   /* 带输入弹窗 */
 
  /* 弹窗 */
@@ -115,7 +290,7 @@ border-radius: 10rpx;
   width: 540rpx;
   overflow: hidden;
   position: fixed;
-  top: 50%;
+  top: 30%;
   left: 0;
   z-index: 9999;
   background: #fff;
@@ -123,9 +298,9 @@ border-radius: 10rpx;
   border-radius: 36rpx;
 }
 .modal-title {
-  padding-top: 50rpx;
+  padding-top: 10rpx;
   font-size: 36rpx;
-  color: #030303;
+  color: #524747;
   text-align: center;
 }
 .modal-content {
@@ -170,3 +345,4 @@ input-holder {
   color: #ec5300;
   text-align: center;
 }
+

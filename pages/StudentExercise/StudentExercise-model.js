@@ -6,10 +6,10 @@ constructor(){
 }
 
 // 从服务器获取所有分类
-getAllQuestions(callback){
+getAllQuestions(grade_id,callback){
   //  传递参数到base基类的request（）
 var params={
-   url:'getQuestion/all',
+   url:'getQuestion/'+grade_id,
    sCallback:function(data){
     callback&&callback(data);
    }

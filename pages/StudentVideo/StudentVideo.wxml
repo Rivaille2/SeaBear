@@ -1,6 +1,74 @@
+<import src="../tpls/bolangmodel/bolangmodel-tpl.wxml" />
+
+<view class="conter">
+  <!-- 列表的顶部布局 -->
+  <view class="product">
+   <!-- 计时的顶部布局 -->
+ <view class="product">
+
+<view class="top">
+  <view class="center">
+    <view class="center_top">
+      <image class="rank_icon" src="/pages/Icon/vido.png"></image>
+    <text>学习资料</text>
+    </view>
+    <view class="center_down">
+      <view class="center_rank" bindtap="toNone">
+        <text class="rank_text">数量：245{{number}}</text>
+      </view>
+    </view>
+  </view>
+  <image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
+</view>
+</view>
+</view>
+
+<view class='topTabSwiper'>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>语文</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>数学</view>
+    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent'>单词打卡</view>
+</view>
+
+<swiper current="{{currentData}}" class='swiper'  duration="300" bindchange="bindchange">
+  <swiper-item>
+ <!-- 语文单元列表分类 -->
+<!-- 单元列表分类 -->
+<view class="listItem">
+     <block wx:for="{{VideoAll}}">
+      <view class="Items" bindtap="VideoModeltap" data-id="{{item.id}}"  data-name="{{item.name}}">
+              <image class="bottom_icon" src="../Icon/video_std.png"></image>
+              <text class="textItem name">{{item.name}}</text>
+              <image class="arrow"   bindtap="VideoModeltap" src="../Icon/jian.png"></image>
+            </view>
+     </block>
+      
+          </view>
+</swiper-item> 
+  <swiper-item>
+<!-- 数学单元列表分类 -->
+<!-- 单元列表分类 -->
+<view class="listItem">
+     <block wx:for="{{VideoAll}}">
+      <view class="Items" bindtap="VideoModeltap" data-id="{{item.id}}"  data-name="{{item.name}}">
+              <image class="bottom_icon" src="../Icon/video_std.png"></image>
+              <text class="textItem name">{{item.name}}</text>
+              <image class="arrow"   bindtap="VideoModeltap" src="../Icon/jian.png"></image>
+            </view>
+     </block>
+      
+          </view>
+</swiper-item>
+  <swiper-item>
+
+  <view class="Items"  bindtap="WordBindtap">
+            <image class="bottom_icon" src="../Icon/ci.png"></image>
+            <text class="textItem snap_address">单词打卡</text>
+            <image class="arrow"   bindtap="WordBindtap" src="../Icon/jian.png"></image>
+           </view>
+           
+  </swiper-item>  
+</swiper>
 
 
-<view class="videos">
-  <text>还未开发完成！正在开发中。。。。。。。。。</text>
- 
+
 </view>

@@ -1,0 +1,52 @@
+<import src="../tpls/StudentJob/StudentJob-tpl.wxml" />
+<import src="../tpls/StudentDetail/StudentDetail-tpl.wxml" />
+
+
+<view class="conter">
+
+ <!-- 计时的顶部布局 -->
+ <view class="product">
+
+<view class="top">
+  <view class="center">
+    <view class="center_top">
+      <image class="rank_icon" src="/pages/image/student_image.jpg"></image>
+    <text>学生信息</text>
+    
+    </view>
+    <view wx:if="{{currid == 0}}" class="center_down">
+      <view class="center_rank" bindtap="toNone">
+        <text class="rank_text">学生总人数：{{Number}}</text>
+      </view>
+    </view>
+  </view>
+  <image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
+</view>
+</view>
+
+
+
+<!-- 日期选择器 -->
+<view wx:if="{{currid !=0}}">
+  <view class="pickerTop">
+  <picker bindchange="bindDateChange" value="{{index}}" range="time" mode="date">
+      <view class="picker">
+        查看 <text>--{{date}}--</text> 的作业
+      </view>
+    </picker>
+</view>
+
+<view class="imgMain">
+<template is="studentjob" data="{{gradesubmitArr,stdname}}"></template>
+</view>
+</view>
+
+<view wx:if="{{currid == 0}}">
+
+<view class="studentDetail">
+      <template is="students" data="{{students:stdDetailArr}}"></template>
+    </view>
+
+</view>
+
+</view>

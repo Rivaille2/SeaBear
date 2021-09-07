@@ -1,6 +1,13 @@
 // app.js
+import {Token} from 'utils/token.js';
 App({
+
   onLaunch() {
+    // 获取token令牌
+    var token=new Token();
+    token.verify();
+
+
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())

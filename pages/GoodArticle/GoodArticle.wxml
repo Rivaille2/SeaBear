@@ -1,0 +1,41 @@
+<import src="../tpls/RankingModel/RankingModel-tpl.wxml" />
+<view class="conter">
+
+
+ <!-- 阅读小故事 -->
+ <view class="product">
+
+<view class="top">
+  <view class="center">
+
+    <view class="center_top">
+      <image class="rank_icon" src="/pages/Icon/article.png"></image>
+      <text>----- 好文章 -----</text>
+    </view>
+
+  </view>
+  <image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
+</view>
+</view>
+
+<view class="articleMain">
+
+  <view class="btnItems">
+  <block wx:for="{{ArticelAll}}">
+
+        
+        <view class="btnItem" bindtap="ArticleDetail" data-id="{{item.id}}" data-title="{{item.title}}">
+          <image class="my_icon" src="../Icon/article.png"></image>
+          <text>{{item.title}}</text>
+        </view>
+    
+    
+
+  </block>
+
+</view>
+</view>
+
+
+
+</view>

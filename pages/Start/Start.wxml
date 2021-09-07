@@ -4,21 +4,57 @@
   <view class="sp_top">
     <swiper class="" indicator-dots='true' indicator-color='white' indicator-active-color='black' autoplay='true'>
       <block wx:for="{{bannerArr}}" >
-  <swiper-item><image src="{{item.img.url}}" /></swiper-item>
+  <swiper-item><image bindtap="CompetitionRankTap" src="{{item.img.url}}" /></swiper-item>
       </block>
+      <swiper-item><image bindtap="StudentVideo" src="https://hemantower.com/public/images/banner05.jpg" /></swiper-item>
 </swiper>
   </view>
 <!-- 选项 -->
 
-<image class="startconster" src="../Icon/webp.png"></image>
-
 <view class="btnItems">
-  <view class="btnItem" bindtap="MImiClick">我们的秘密</view>
-  <view class="btnItem" bindtap="StudentLogin">学员登录</view>
-  <view class="btnItem" bindtap="StudentDetail">学员进度</view>
-  <view class="btnItem" bindtap="StudentSchedule">学习计划</view>
-  <view class="btnItem" bindtap="StudentVideo">视频教程</view>
-  <view class="btnItem" bindtap="StudentExercise">课后练习</view>
+
+  <view class="start_item">
+    <image bindtap="StudentLogin" class="my_icon" src="../Icon/my_start.png"></image>
+    <view class="text_btn">个人中心</view>
+  </view>
+  
+<view class="start_item">
+  <image  bindtap="StudentGoodArticle" class="my_icon" src="../Icon/article.png"> </image>
+  <view class="text_btn">好文章</view>
+</view>
+   
+<view class="start_item">
+  <image  bindtap="StudentRanking" class="my_icon" src="../Icon/ranking.png">  </image>
+  <view class="text_btn">积分排行</view>
+</view>
+<!-- <view class="start_item">
+  <image  bindtap="StudentExercise" class="my_icon" src="../Icon/exe_start.png">  </image>
+  <view class="text_btn">课后练习</view>
+</view> -->
+
+<view class="start_item">
+  <image  bindtap="StudentSign" class="my_icon" src="../Icon/sign.png">    </image>
+  <view class="text_btn">每日签到</view>
+</view>
+
+</view>
+
+<view class="qiang" bindtap="StudentCompetition">
+  <image src="../image/qiang.gif"></image>
+  <text class="qiang_text">参加竞赛-换奖品</text>
+  <view class="btn" bindtap="StudentCompetition" animation="{{ animationData }}"><text>马上参加</text></view>
+</view>
+
+<view class="reading">
+  <block wx:for="{{ArticleArr}}">
+
+  <view bindtap="StudentRead" class="read_item" data-id="{{item.id}}">
+    <text>{{item.title}}</text>
+    <view class="read_conter">{{item.content}}</view>
+    <image class="reading_icon" src="../Icon/ju.png">    </image>
+  </view>
+  
+</block>
 </view>
 
 

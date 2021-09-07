@@ -2,5 +2,7 @@
   "usingComponents": {},
   "navigationBarTitleText": "个人中心",
   "navigationBarTextStyle": "black",
-  "navigationStyle": "custom"
+  "navigationBarBackgroundColor": "#23EBB9"
+ 
+
 }

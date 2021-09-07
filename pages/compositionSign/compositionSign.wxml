@@ -1,0 +1,14 @@
+<import src="../tpls/bolangmodel/bolangmodel-tpl.wxml" />
+<import src="../tpls/ListCategory/ListCategory-tpl.wxml" />
+
+<view class="conter">
+  <!-- 列表的顶部布局 -->
+  <view class="product">
+  <template is="listTop" data="{{genretitle:genretitle}}"></template>
+</view>
+<!-- 单元列表分类 -->
+<view class="product">
+  <template is="WordListSign" data="{{genreArr:genreArr}}"></template>
+</view>
+
+</view>

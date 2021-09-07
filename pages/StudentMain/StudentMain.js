@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    AllshowModal:"",
+    AllshowModal:false,
     code:300
   },
 
@@ -19,25 +19,32 @@ Page({
    //  从缓存获取账号密码
    let sc_account=wx.getStorageSync('sc_account');
     let code=wx.getStorageSync('code');
-
+    // let std_fens=wx.getStorageSync('jifen');  //我的积分
+    // console.log("signfens:"+std_fens)
    this.setData({
      code:code,
-     account:sc_account
+     account:sc_account,
+
    })
       // 从缓存里面获取姓名，如果名字存在就说明学生信息已经存在了
   // 初始化学生信息
-  if(code!=201){
-    this.setData({
-      AllshowModal:true
-    })
+ // 已经有学生信息，就根据账号请求学生数据
+ this._loadData(sc_account);
+
+  // if(code!=201){
+  //   this.setData({
+  //     AllshowModal:true
+  //   })
   
-  }else{
-    // 已经有学生信息，就根据账号请求学生数据
-    this._loadData(sc_account);
-  }
+  // }else{
+  //   // 已经有学生信息，就根据账号请求学生数据
+  //   this._loadData(sc_account);
+  // }
 
 
   },
+
+
 
   /**
    * 生命周期函数--监听页面显示
@@ -59,7 +66,10 @@ this.setData({
 })
 console.log(res)
 wx.setStorageSync('std_id', res.id);
-console.log("学生id："+res.id)
+wx.setStorageSync('grade', res.grade);
+wx.setStorageSync('jifen', res.std_score);
+wx.setStorageSync('std_name', res.std_name);
+console.log("学生id："+res.id+res.std_name)
 
 });
 
@@ -193,101 +203,106 @@ console.log("学生id："+res.id)
       },
     })
   },
-  onConfirmnianji: function() {
-    var that = this;
-    wx.request({
-      url: 'https://www.111111.com/111.php',
-      method: "post",
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      data: {
-        type: "updata",   //在服务器端已这个参数判断调动哪个函数或者IF语句
-        stuNianji: that.data.stuNianji,
-      },
-      success(res) {
-        console.log(res.data)
-        if (res.data == '成功') {
-          wx.showToast({
-            title: '修改成功',
-            icon: 'success'
-          })
-          that.nianjiup_hideModal();
-        } else if (res.data == '') {
-          wx.showToast({
-            title: '服务器连接失败',
-            icon: 'none'
-          })
-        }
-      },
+
+
+
+  
+// 我的信息
+  Studentmessage:function(){
+
+    wx.navigateTo({
+      url: '../Mymessage/Mymessage',
     })
-  },
-  onConfirmaddress: function() {
-    var that = this;
-    wx.request({
-      url: 'https://www.111111.com/111.php',
-      method: "post",
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      data: {
-        type: "updata",   //在服务器端已这个参数判断调动哪个函数或者IF语句
-        stuAddress: that.data.stuAddress,
-      },
-      success(res) {
-        console.log(res.data)
-        if (res.data == '成功') {
-          wx.showToast({
-            title: '修改成功',
-            icon: 'success'
-          })
-          that.addressup_hideModal();
-        } else if (res.data == '') {
-          wx.showToast({
-            title: '服务器连接失败',
-            icon: 'none'
-          })
-        }
-      },
-    })
-  },
-  onConfirmnumber: function() {
-    var that = this;
-    wx.request({
-      url: 'https://www.111111.com/111.php',
-      method: "post",
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      data: {
-        type: "updata",   //在服务器端已这个参数判断调动哪个函数或者IF语句
-        stuNumber: that.data.stuNumber,
-      },
-      success(res) {
-        console.log(res.data)
-        if (res.data == '成功') {
-          wx.showToast({
-            title: '修改成功',
-            icon: 'success'
-          })
-          that.numberup_hideModal();
-        } else if (res.data == '') {
-          wx.showToast({
-            title: '服务器连接失败',
-            icon: 'none'
-          })
-        }
-      },
-    })
+  
   },
 
-  // 返回上一级
-  back:function(){
-   wx.switchTab({
-     url: '../Start/Start'
-   })
+  // 已领奖品
+  Rankbindtap:function(){
+    wx.navigateTo({
+      url: '../RankGift/RankGift',
+    })
+  
+  },
+  
+// 学员进度点击事件
 
-  }
+StudentDetail:function(){
+
+  wx.navigateTo({
+    url: '../StudyProgress/StudyProgess',
+  })
+
+},
+// 学习计划点击事件
+
+StudentSchedule:function(){
+
+  wx.navigateTo({
+    url: '../StudentSchedule/StudentSchedule',
+  })
+
+},
+
+// conversionBindtap  兑换的点击事件
+
+conversionBindtap:function(){
+
+  wx.navigateTo({
+    url: '../Conversion/Conversion',
+  })
+
+},
+
+
+// exerciseBindtap  课后练习点击事件
+
+exerciseBindtap:function(){
+
+  wx.navigateTo({
+    url: '../Exercise/Exercise',
+  })
+
+},
+
+
+// writeBindtap  写好字打卡点击事件
+
+writeBindtap:function(){
+
+  wx.navigateTo({
+    url: '../WritePunch/WritePunch',
+  })
+
+},
+
+// readBindtap  阅读打卡点击事件
+
+readBindtap:function(){
+
+  wx.navigateTo({
+    url: '../ArticlePunch/ArticlePunch',
+  })
+
+},
+
+
+// compBindtap  作文打卡点击事件
+compBindtap:function(){
+
+  wx.navigateTo({
+    url: '../compositionSign/compositionSign',
+  })
+},
+
+// StudentUpdateTap  作业上传点击事件
+StudentUpdateTap:function(){
+
+  wx.navigateTo({
+    url: '../OperationUpdate/OperationUpdate',
+  })
+},
+
+
 
 
 })

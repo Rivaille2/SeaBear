@@ -1,0 +1,30 @@
+<import src="../tpls/CompetitionsModel/CompetitionsModel-tpl.wxml" />
+
+<view class="conter">
+  <!-- 计时的顶部布局 -->
+  <view class="product">
+
+		<view class="top">
+      <text class="top_title">计时大赛</text>
+			<view class="center">
+				<view class="center_top">
+          <image class="rank_icon" src="/pages/Icon/niao.png"></image>
+				<text>开始计时：{{h}}:{{m}}:{{s}}</text>
+				</view>
+				<view class="center_down">
+					<view class="center_rank" bindtap="toNone">
+						<image class="rank_icon" src="/pages/Icon/mei.png"></image>
+						<text class="rank_text">已答题数：{{number}}</text>
+					</view>
+				</view>
+			</view>
+			<image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
+		</view>
+
+</view>
+<!--  -->
+<view class="competitions">
+  <template is="competitionsmodel" data="{{comptitonsArr,curring:curring,number:number,answer:answer,errorquestion,flag:flag}}"></template>
+</view>
+
+</view>

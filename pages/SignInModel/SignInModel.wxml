@@ -1,0 +1,26 @@
+<import src="../tpls/TabModel/TabModel-tpl.wxml" />
+
+<view class="conter">
+<!-- tab  切换栏 -->
+<view>
+  <template is="tabmodel" data="{{genreArr,questions,currentData:currentData,currings:curring,numbers:number,answers:answer,errorquestion,flags:flag}}"></template>
+</view>
+
+<!-- 海报 -->
+<view class="modal-mask" bindtap="hideModal"  wx:if="{{showModal}}"></view>
+ 
+<view class="modal-dialog" wx:if="{{showModal}}">
+
+  <view class="canvas_main">
+	<canvas type="2d" id="canvas_box" style="width:260px;height:430px "></canvas>
+</view>
+
+</view>
+
+<view  bindtap="hideModal" wx:if="{{showModal}}">
+
+<button class='bott' catchtap="bc" canvas-id="mycanvas"> 保存到相册    </button>
+
+</view>
+
+</view>

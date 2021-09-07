@@ -88,7 +88,7 @@ if(scnumber && scpwd){
 //注册功能的实现
     wx.request({
       method: "POST", //指定为http协议中的POST方法
-      url: 'https://hemantower.com/xiaobeisignin/adminlogin', //后端接口完整URL
+      url: 'https://douyacai.work/xiaobeisignin/adminlogin', //后端接口完整URL
       data: {
         number:number,//将表单中name的值绑定给对象的school_name属性
         pwd: pwd  //将表单中pwd的值绑定给对象的pwd属性

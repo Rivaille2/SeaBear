@@ -1,0 +1,29 @@
+<!--  商家订单列表模板 -->
+<template name="studentjob">
+<view class="products-box">
+  <block wx:for="{{stdname}}">
+      <view class="name_top">
+      <text class="name">姓名:{{item}}</text>
+    </view>
+  </block>
+  <view class="products">
+    <block wx:for="{{gradesubmitArr}}">
+     <view class="products-items">
+          <view class="receive receivecolor2" bindtap="getdelete" data-Url="{{item.url}}" data-id="{{item.id}}">
+               <text>删除</text>
+          </view>
+          <view class="itmen_left">
+           <image class="student_image" bindtap="previewImage" data-index="{{index}}" src="https://hemantower.com/public/images{{item.url}}"></image>
+          </view>
+              <view class="products-item-rigth">
+              
+                  <text class="name">年级：{{item.std_grade}}</text>
+                  <text class="snap_address">提交日期：{{item.update_time}}</text>
+                  <text class="name">课目：{{item.category_id}}</text>
+              </view>
+      </view>
+  </block>
+  </view>
+ 
+</view>
+</template>

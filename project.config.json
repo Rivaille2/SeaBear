@@ -23,7 +23,7 @@
     "compileHotReLoad": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
-    "useApiHostProcess": false,
+    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -41,7 +41,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.18.0",
-  "appid": "wx1934ec701b33e20b",
+  "appid": "wxeb91691deed503f6",
   "projectname": "SeaBear",
   "debugOptions": {
     "hidedInDevtools": []

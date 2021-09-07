@@ -1,0 +1,30 @@
+<import src="../tpls/VolTabModel/VolTabModel-tpl.wxml" />
+
+<view class="conter">
+ <!-- 计时的顶部布局 -->
+ <view class="product">
+
+<view class="top">
+  <view class="center">
+    <view class="center_top">
+      <image class="rank_icon" src="/pages/Icon/vido.png"></image>
+    <text>{{name}}</text>
+    
+    </view>
+    <view class="center_down">
+      <view class="center_rank" bindtap="toNone">
+        <text class="rank_text">资料数量：4{{number}}</text>
+      </view>
+    </view>
+  </view>
+  <image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
+</view>
+</view>
+
+ <!-- 单元列表分类 -->
+ <view class="product">
+  <template is="voltabmode" data="{{videoDanArr,currentData:currentData,curring:curring,number:number,answer:answer,errorquestion,flag:flag}}"></template>
+</view>
+
+
+</view>

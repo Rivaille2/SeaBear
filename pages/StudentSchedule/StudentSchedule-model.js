@@ -21,11 +21,11 @@ this.request(params);
  }
 
  // 获取某分类的所有的试卷 getImageByCategory   Images
- getstudentsByCategory(id,std_id,callback){
+ getstudentsByCategory(id,std_grade,callback){
   //  传递参数到base基类的request（）
 var params={
   type:'post',
-   url:'student/by_category/'+ id+"?std_id="+std_id,
+   url:'student/by_grade/'+ id+"?std_grade="+std_grade,
    sCallback:function(data){
 
     callback&&callback(data);

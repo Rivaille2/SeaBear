@@ -1,0 +1,32 @@
+<view class="conter">
+ <!-- 视频播放的顶部布局 -->
+ <view class="product">
+
+<view class="top">
+  <view class="center">
+    <view class="center_top">
+      <image class="rank_icon" src="/pages/Icon/gift.png"></image>
+    <text>已换奖品</text>
+    </view>
+    <!-- <text class="rankCode">兑换码：{{ConversionMgs}} 请截图领取！</text> -->
+  </view>
+  <image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
+</view>
+</view>
+
+<view class="products-box">
+  <block wx:for="{{GiftDetailArr}}">
+     <view class="products-item">
+          
+              <view class="products-item-rigth">
+                <image src="https://hemantower.com/public/images{{item.con_img_id}}"></image>
+              </view>
+
+              <view class="bott_del">
+                <text>兑奖码：{{item.conversion_code}}</text>
+              </view>
+      </view>
+  </block>
+</view>
+  
+</view>

@@ -1,0 +1,30 @@
+<import src="../../tpls/StudentModel/StudentModel-tpl.wxml" />
+<import src="../../tpls/StudentDetailList/StudentDetailList-tpl.wxml" />
+
+<template name="stduentModel">
+
+  <view class='topTabSwiper'>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>学生详情</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>提交的作业</view>
+    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent'>上传的作业</view>
+</view>
+
+<swiper current="{{currentData}}" class='swiper'  duration="300" bindchange="bindchange">
+  <swiper-item>
+    <view class='swiper_con'>
+      <!-- 学生信息 -->
+      <template is="StdDetailListSign" data="{{grade:grade}}"></template>
+    </view>
+</swiper-item> 
+  <swiper-item>
+    <view class='swiper_con swiper_conter'>
+      <template is="StdDetailListSign" data="{{grade}}"></template>
+  </view>
+</swiper-item>
+
+  <swiper-item>
+    <template is="StdDetailListSign" data="{{grade}}"></template>
+  </swiper-item>  
+</swiper>
+
+</template>

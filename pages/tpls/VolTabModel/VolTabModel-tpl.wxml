@@ -1,0 +1,25 @@
+<import src="../../tpls/QuestionSignInModel/QuestionSignInModel-tpl.wxml" />
+<import src="../ListCategory/ListCategory-tpl.wxml" />
+<template name="voltabmode">
+
+  <view class='topTabSwiper'>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>上册</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>下册</view>
+    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent'>关注</view>
+</view>
+
+<swiper current="{{currentData}}" class='swiper'  duration="300" bindchange="bindchange">
+  <swiper-item>
+    <view class='swiper_con'>
+      <template is="WordListSign" data="{{genreArr:videoDanArr}}"></template>
+    </view>
+</swiper-item> 
+  <swiper-item>
+    <view class='swiper_con swiper_conter'>
+      <template is="WordListSign" data="{{genreArr:videoDanArr}}"></template>
+  </view>
+</swiper-item>
+  <swiper-item><view class='swiper_con'>正在更新</view></swiper-item>  
+</swiper>
+
+</template>

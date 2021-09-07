@@ -2,11 +2,18 @@
 
 
 .header{
-  width: 50%;
+  width: 100%;
   font-size:60rpx ;
   font-weight: 800;
-  margin-left: 200rpx;
+  margin-left: 280rpx;
   margin-top: 50rpx;
+}
+
+.header image{
+  width: 100%;
+  height: 400rpx;
+  margin-left: -280rpx;
+  margin-top: -50rpx;
 }
 
 .zc{
@@ -15,7 +22,7 @@
   height: 70rpx;
   font-size:35rpx ;
   font-weight: 800;
-  margin-left: 100rpx;
+  margin-left: 170rpx;
   margin-top: 145rpx;
   border-radius: 10rpx;
   background-color: #87CEFA;
@@ -34,7 +41,7 @@
   height: 70rpx;
   font-size:35rpx ;
   font-weight: 800;
-  margin-left: 100rpx;
+  margin-left: 170rpx;
   margin-top: 45rpx;
   border-radius: 10rpx;
   background-color: #87CEFA;
@@ -50,23 +57,27 @@
 }
 
 .register{
-height: 400rpx;
-margin-left:100rpx ;
-margin-top: 80rpx;
+  width: 90%;
+height: 900rpx;
+margin-left:35rpx ;
+margin-top: -100rpx;
 position: relative;
-
+border-radius: 15rpx;
+box-shadow: 7rpx 7rpx 9rpx 10rpx #cdcfcf;
 }
 
 .input{
-width: 80%;
-height: 60rpx;
-border: 4rpx solid darkgray;
-margin: 25rpx;
+  width: 80%;
+  height: 80rpx;
+  border: 4rpx solid darkgray;
+  border-radius: 10rpx;
+  margin: 58rpx;
 }
 
 .btn{
 position: absolute;
-  left: 100rpx;
+  left: 170rpx;
+  top: 255rpx;
   background-color: #87CEFA;
 
 }
@@ -75,7 +86,7 @@ position: absolute;
   position: absolute;
   width: 100rpx;
   height: 80rpx;
-  left: 30rpx;
+  left: 175rpx;
   font-size: 35rpx;
   font-style: initial;
   font-weight: 600;
@@ -91,14 +102,14 @@ position: absolute;
     width: 370rpx;
     height: 80rpx;
     border-radius: 10rpx;
-    top: 545rpx;
-    left: 105rpx;
+    top: 635rpx;
+    left: 175rpx;
     }
 
     .btnItem4{
       width: 370rpx;
       height: 80rpx;
       border-radius: 10rpx;
-      top: 680rpx;
-      left: 105rpx;
+      top: 770rpx;
+      left: 175rpx;
       }

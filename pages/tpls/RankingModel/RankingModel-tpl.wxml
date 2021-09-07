@@ -1,0 +1,44 @@
+<template name='rankingModel'>
+
+<view class="conter">
+ <!-- 计时的顶部布局 -->
+ <view class="product">
+
+<view class="top">
+  <view class="center">
+    <view class="center_top">
+      <image wx:if="{{!score_flage}}" class="rank_icon" src="/pages/Icon/niao.png"></image>
+      <image wx:if="{{score_flage}}" class="rank_icon" src="/pages/Icon/ranking.png"></image>
+    <text wx:if="{{!score_flage}}">--- 计时竞赛排行榜 ---</text>
+    <text wx:if="{{score_flage}}">----- 积分排行榜 -----</text>
+    </view>
+    <view class="center_down">
+      <view class="center_rank" bindtap="toNone">
+        <image class="rank_icon" src="/pages/Icon/rank_icon.png"></image>
+        <text class="rank_text">排名人数：{{number}}</text>
+      </view>
+    </view>
+  </view>
+  <image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
+</view>
+</view>
+
+<view class="item-box">
+  <view class="items">
+    <view wx:for="{{list}}"  wx:key="{{index}}"  class="item"> 
+      <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.txtStyle}}" class="inner txt">
+      <image class="item-icon" mode="widthFix" src="../Icon/rank_icon.png"></image>
+       <i> {{item.std_name}}</i>
+       <i class="rankscore"> {{item.std_score}} 分</i>
+      <span class="item-data">
+     <i class="rankpace"> {{index+1}}</i>
+      </span>
+      
+      </view>
+    </view>
+  </view>
+</view>
+
+</view>
+
+</template>

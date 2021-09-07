@@ -2,7 +2,7 @@
 <view class="link">
 	<!-- 左边 -->
 	<scroll-view class="left" scroll-y scroll-with-animation scroll-top="{{scrollTops}}">
-		<view class="item {{tabCur===index?'active':''}}"   wx:for="{{categoryTypeArr}}" wx:key="index" wx:if="{{index>=5}}" data-index="{{index}}" bindtap="tabNav">{{item.name}}</view>
+		<view class="item {{tabCur===index?'active':''}}"   wx:for="{{categoryTypeArr}}" wx:key="index" wx:if="{{index>=5 && index<8}}" data-index="{{index}}" bindtap="tabNav">{{item.name}}</view>
 	</scroll-view>
 
 	<!-- 右边 -->

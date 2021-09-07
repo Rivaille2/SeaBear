@@ -1,0 +1,21 @@
+<template name="canvas">
+
+ <view class="modal-mask" bindtap="hideModal"  wx:if="{{showModal}}"></view>
+  
+ <view class="modal-dialog" wx:if="{{showModal}}">
+ 
+   <view class="canvas_main">
+   <canvas type="2d" id="canvas_box" style="width:260px;height:430px "></canvas>
+ </view>
+ 
+ </view>
+ 
+ <view  bindtap="hideModal" wx:if="{{showModal}}">
+ 
+ <button class='bott' catchtap="bc" canvas-id="mycanvas"> 保存到相册    </button>
+ 
+ </view>
+
+ <button class="show-btn" bindtap="changeYL">分享朋友圈</button>
+ 
+</template>

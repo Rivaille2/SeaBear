@@ -93,6 +93,90 @@
         {
           "name": "pages/StudentExercise/StudentExercise",
           "pathName": "pages/StudentExercise/StudentExercise",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/Start/Start",
+          "pathName": "pages/Start/Start",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/SignIn/SignIn",
+          "pathName": "pages/SignIn/SignIn",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/WordSign/WordSign",
+          "pathName": "pages/WordSign/WordSign",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/SignInModel/SignInModel",
+          "pathName": "pages/SignInModel/SignInModel",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/ComSignInModel/ComSignInModel",
+          "pathName": "pages/ComSignInModel/ComSignInModel",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/RankList/RankList",
+          "pathName": "pages/RankList/RankList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/OperationUpdate/OperationUpdate",
+          "pathName": "pages/OperationUpdate/OperationUpdate",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/StudentVideo/StudentVideo",
+          "pathName": "pages/StudentVideo/StudentVideo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/VideoPlayModel/VideoPlayModel",
+          "pathName": "pages/VideoPlayModel/VideoPlayModel",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/Conversion/Conversion",
+          "pathName": "pages/Conversion/Conversion",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/RankGift/RankGift",
+          "pathName": "pages/RankGift/RankGift",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/ArticleModel/ArticleModel",
+          "pathName": "pages/ArticleModel/ArticleModel",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/JobDetail/JobDetail",
+          "pathName": "pages/JobDetail/JobDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/TeacherWatchStd/TeacherWatchStd",
+          "pathName": "pages/TeacherWatchStd/TeacherWatchStd",
           "scene": null
         }
       ]

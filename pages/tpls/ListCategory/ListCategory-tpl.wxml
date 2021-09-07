@@ -1,0 +1,14 @@
+<!--  单元分类列表模板 -->
+<template name="WordListSign">
+  <view class="products-box">
+  <block wx:for="{{genreArr}}">
+     <view class="products-item" bindtap="WordSignTap"  data-id="{{item.id}}" data-name="{{item.name}}">
+              <view class="products-item-rigth">
+                <text class="name">{{item.name}}</text>
+                <image class="arrow"   bindtap="conversionBindtap" src="../Icon/jian.png"></image>
+              </view>
+              
+      </view>
+  </block>
+</view>
+</template>

@@ -1,3 +1,21 @@
+<view class="conter">
+
+ <!-- 练习模块的顶部布局 -->
+ <view class="product">
+
+<view class="top">
+  <view class="center">
+    <view class="center_top">
+      <image class="rank_icon" src="/pages/Icon/niao.png"></image>
+    <text>{{name}}课后练习</text>
+    </view>
+
+  </view>
+  <image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
+</view>
+</view>
+
+
 <view class="index-top">
   <view class="{{index <= curring && curring != 0?'top-blue':'top-currin'}} {{index > 0 && curring < 2?'top-fint':'top-ping'}} {{2 == curring?'top-nux':''}} {{2 < curring?'top-name':''}}" wx:for="{{10}}" wx:key="index">
     <view class="{{index <= curring?'top-buing':'top-bloc'}}">
@@ -6,6 +24,7 @@
     </view>
   </view>
 </view>
+
 <view class="centent" wx:for="{{questions}}" wx:key="index" wx:if="{{index == number}}">
   <view class="centent-title">{{index+1}}. {{item.title}}</view>
   <radio-group class="centent-group">
@@ -24,8 +43,7 @@
 </view> 
 <view class="submission" wx:if="{{number == questions.length}}">
   <view>
-  <!-- <image src="https://profile.csdnimg.cn/0/9/6/3_qq_43764578"></image> -->
-  <image src="https://hemantower.com/public/images/6113ded84ed7c.jpg"></image>
+  <image src="https://hemantower.com/public/images/student_image.jpg"></image>
  
   </view>
   <view class="submission-center" bindtap="subsic" disabled="{{flag}}">提交答案</view>
@@ -69,4 +87,8 @@
   <button bindtap="black">返回首页</button>
 </view>
    
+</view>
+  
+
+
 </view>

@@ -1,0 +1,63 @@
+<import src="../../tpls/QuestionSignInModel/QuestionSignInModel-tpl.wxml" />
+<template name="Comstiontabmodel">
+
+  <view class='topTabSwiper'>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>范文阅读</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>范文打卡</view>
+    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent'>关注</view>
+</view>
+
+<swiper current="{{currentData}}" class='swiper'  duration="300" bindchange="bindchange">
+  <swiper-item>
+    <view class='swiper_con'>
+        <image src="https://hemantower.com/public/images{{genreArr.url}}"></image>
+    </view>
+</swiper-item> 
+  <swiper-item>
+    <view class='swiper_con swiper_conter'>
+  
+        <!-- =========================上传数据—————————————— -->
+<view class="conter_main show_view_show">
+
+<view>
+<!-- 日期选择器 -->
+    <picker bindchange="bindDateChange" value="{{index}}" range="time" mode="date">
+      <view class="picker">
+        时间选择：<text>{{date}}</text>
+      </view>
+    </picker>
+
+ </view>
+
+<view class="weui-uploader__bd">
+<view class="weui-uploader__files">
+   <block wx:for="{{pics}}" wx:for-item="image" wx:key="item">
+    <view class="weui-uploader__file">
+      
+      <image src="/pages/image/scanCode_delete.png" wx:if="{{image!=''}}"
+      bindtap="img_delete" class="image_view_css" data-index="{{index}}" 
+      data-sign="{{disabl}}"></image>
+      <image class="weui-uploader__img" wx:if="{{image!=''}}" src="{{image}}" bindtap="previewImage" data-src="{{image}}"></image> 
+      <!--这里是显示图片在页面上用for循环遍历--> 
+    </view>
+   </block>
+ </view>
+ 
+ <view class="weui-uploader__input-box {{isShow?'true':'hideTrue'}}">
+   <view class="weui-uploader__input" bindtap="chooseImage" data-sign="{{disabl}}"></view>
+ </view>
+
+ <view class="btn">
+     <button bindtap="uploadimgs">上传图片</button>
+ </view>
+
+</view>
+
+</view>
+
+  </view>
+</swiper-item>
+  <swiper-item><view class='swiper_con'>welcome come to 关注</view></swiper-item>  
+</swiper>
+
+</template>

@@ -32,7 +32,7 @@
 
 
     <view class="modal-footer">
-      <view class="btn-cancel" bindtap="onCancelall" data-status="cancel">取消</view>
+      <view class="btn-cancel"  bindtap="onCancelall"   data-status="cancel">取消</view>
       <view class="btn-confirm" bindtap="onConfirmall" data-status="confirm">确定</view>
     </view>
   </view>
@@ -84,35 +84,101 @@
 
 <!-- 学生内容 -->
 <view class="student_top">
-  <image class="student_webp" src="../image/student_webp.jpg"></image>
-  <view class="itmen_left">
+
+  <view>
+		<view class="top">
+			<view class="center">
+        
+				<view class="center_top">
+          <view class="itmen_left">
     <!-- 学生的照片 -->
-           <image class="student_image" src="../image/student_image.jpg"></image>
-           <text class="name">姓名:{{StudentDetail.std_name}}</text>
            <!-- code 200说明学生信息提交成功，同时隐藏这个信息提交按钮 -->
            <view  class="btn_student {{code==201?'btn_student_null':''}}" bindtap="textbtn">
-            <text>填写学生信息</text>
+            <text>修改信息</text>
            </view>
           
    </view>
+					<view class="center_img" bindtap="toBaseInfo">
+				
+						<open-data type="userAvatarUrl" class="user_head"></open-data>
+					</view>
+					<view class="center_info" bindtap="toBaseInfo">
+						<view class="center_name">{{StudentDetail.std_name}}</view>
+
+						<view class="center_phone" bindtap="">基本信息</view>
+					</view>
+				</view>
+				<view class="center_down">
+					<view class="center_rank" bindtap="Rankbindtap">
+						<image  class="rank_icon" src="../Icon/gift.png"></image>
+						<text class="rank_text">已领奖品</text>
+					</view>
+					<view class="center_score" bindtap="toNone">
+						<image class="rank_icon" src="../Icon/score.png"></image>
+						<text class="rank_text">我的积分  <text>{{StudentDetail.std_score}}</text></text>
+					</view>
+				</view>
+			</view>
+			<image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
+		</view>
+	</view>
+
   </view>
+
+
     <view class="student_main">
+
+      <view class="btnItems">
+        
+  <view class="btnItem" bindtap="Studentmessage">
+    <image class="my_icon" src="../Icon/message.png"></image>
+    <text>个人信息</text>
+  </view>
+  <view class="btnItem" bindtap="StudentDetail">
+    <image class="my_icon" src="../Icon/pro.png"></image>
+    <view>我的进度</view>
+  </view>
+  <view class="btnItem" bindtap="StudentSchedule">
+    <image class="my_icon" src="../Icon/jhua.png"></image>
+    <text>我的计划</text>
+  
+  </view>
+        </view>
+
           <view class="products-item-rigth">
-            <view class="Items">
-              <text class="textItem name">年级：{{StudentDetail.std_grade}}</text>
-              <image class="arrow"   bindtap="nianjiup" src="../Icon/arrow.png"></image>
+            <view class="Items" bindtap="conversionBindtap">
+              <image class="bottom_icon" src="../Icon/jiang.png"></image>
+              <text class="textItem name">兑换奖品</text>
+              <image class="arrow"   bindtap="conversionBindtap" src="../Icon/jian.png"></image>
             </view>
-           <view class="Items">
-            <text class="textItem snap_address">家庭地址：{{StudentDetail.std_address}}</text>
-            <image class="arrow"   bindtap="addressup" src="../Icon/arrow.png"></image>
+         
+           <view class="Items"  bindtap="exerciseBindtap">
+            <image class="bottom_icon" src="../Icon/ci.png"></image>
+            <text class="textItem snap_address">课后练习</text>
+            <image class="arrow"   bindtap="exerciseBindtap" src="../Icon/jian.png"></image>
            </view>
-             <view class="Items">
-              <text class="textItem name">家长电话：{{StudentDetail.std_number}}</text>
-              <image class="arrow"  bindtap="number_nameup" src="../Icon/arrow.png"></image>
+             <view class="Items"  bindtap="compBindtap">
+              <image class="bottom_icon" src="../Icon/zuo.png"></image>
+              <text class="textItem name">作文背诵</text>
+              <image class="arrow"  bindtap="compBindtap" src="../Icon/jian.png"></image>
+             </view>
+             <view class="Items"  bindtap="writeBindtap">
+              <image class="bottom_icon" src="../Icon/write.png"></image>
+              <text class="textItem name">写好字打卡</text>
+              <image class="arrow"  bindtap="writeBindtap" src="../Icon/jian.png"></image>
+             </view>
+             <view class="Items"  bindtap="readBindtap">
+              <image class="bottom_icon" src="../Icon/article.png"></image>
+              <text class="textItem name">阅读打卡</text>
+              <image class="arrow"  bindtap="readBindtap" src="../Icon/jian.png"></image>
+             </view>
+             <view class="Items"  bindtap="StudentUpdateTap">
+              <image class="bottom_icon" src="../Icon/update_std.png"></image>
+              <text class="textItem name">作业上传</text>
+              <image class="arrow"  bindtap="StudentUpdateTap" src="../Icon/jian.png"></image>
              </view>
           </view>
     </view>
 
-    <button bindtap="back">返回</button>
-
+   
 </view>

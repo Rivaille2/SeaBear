@@ -1,5 +1,10 @@
 
 <view class="conster">
+
+    <view class="header">
+<image src="https://hemantower.com/public/images/login.jpg"></image>
+</view>
+
     <view  class="Text_top">
         <text>你可以在这里定点查询，你想要去的地方的路线规划！！我相信你出行的时候大部分都是搞不懂该怎么坐公交车的，可以看看这个，点进去就可以定位了。</text>
     </view>

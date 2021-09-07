@@ -1,6 +1,6 @@
 @import "../tpls/base.wxss";
 @import "../tpls/StudentDetail//StudentDetail-tpl.wxss";
-
+@import "../tpls/CompetitionDetail/CompetitionDetail-tpl.wxss";
 
 .conter{
 width: 100%;
@@ -39,25 +39,28 @@ color: rgb(80, 191, 255);
 
 .title_tab{
   position: absolute;
-  width: 70%;
-  height: 70rpx;
-  margin-top: 200rpx;
-  margin-left: 110rpx;
+  width: 90%;
+  margin-top: 100rpx;
+  margin-left: 20rpx;
   color: aliceblue;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 370px;
+  height: 100px;
   /* background-color: brown; */
   
   }
 
    .top_itme1{
-     padding: 95rpx;
+    padding-left: 50rpx;
     font-size: 38rpx;
     font-weight: 800;
     
   }
-  .top_itme2{
-   font-size: 38rpx;
-   font-weight: 800;
- }
+
+
 
 .std_header image{
 position: absolute;
@@ -70,9 +73,8 @@ position: absolute;
 .std_all{
   position: absolute;
   width: 98%;
-  height: 1055rpx;
   border-radius: 15rpx;
-  top: 280rpx;
+  top: 300rpx;
   margin-left: 9rpx;
   /* background-color:#cccccc; */
 }
@@ -177,4 +179,232 @@ margin-top: 500rpx;
 .btn button{
   margin-top: 40rpx;
   background-color: #87CEFA;
+}
+
+/* 视频上传 */
+.video_item{
+width: 100%;
+height: 800rpx;
+margin-top: 45rpx;
+margin-left: 130rpx;
+}
+.video_item .video_play{
+width: 500rpx;
+height: 200rpx;
+}
+.video_item .video_btn{
+
+  margin-top: 235rpx;
+  margin-right: 220rpx;
+
+}
+
+.video_item .start_btn{
+  margin-top: 45rpx;
+
+}
+
+.video_item .video_input{
+width: 500rpx;
+height: 55rpx;
+border-bottom: #87CEFA 1rpx solid;
+border-radius: 5rpx;
+  margin-top: 85rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+
+}
+
+/* 领取奖品信息 */
+
+.gifts-item{
+  min-height:380rpx;
+  width: 99.5%;
+  border-radius: 20rpx;
+  margin-bottom: 15rpx;
+  background-color: #F5F6F5;
+  display: flex;
+  flex-direction:row;
+  position: relative;
+
+}
+
+.gifts-item .bott_del{
+  position: absolute;
+  width: 550rpx;
+  text-align:center ;
+  right: 120rpx;
+  top: 320rpx;
+  font-weight: 600;
+  color: rgb(206, 90, 22);
+  border-radius: 15rpx;
+  z-index: 9999;
+
+}
+
+.gifts-item-rigth{
+  width: 100%;
+  height: 300rpx;
+  line-height: 60rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.gifts-item image{
+ width: 440rpx;
+ height: 270rpx;
+ border-radius: 10rpx;
+}
+
+
+.receive{
+position: absolute;
+width: 130rpx;
+text-align:center ;
+right: 240rpx;
+top: 30rpx;
+font-weight: 900;
+padding: 13rpx;
+color: white;
+border-radius: 15rpx;
+z-index: 9999;
+}
+
+
+.receivecolor2{
+  position: absolute;
+  right: 50rpx;
+  background-color: rgb(255, 145, 0);
+}
+
+
+.top {
+  width: 100%;
+  height: 230px;
+  background: #23EBB9;
+  padding-top: 15px;
+  position: relative;
+}
+
+
+.center {
+  width: 95%;
+  height: 150px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  margin: 70rpx auto;
+  border-radius: 5px;
+}
+
+.center  .rankCode{
+  margin-left:200rpx;
+  margin-top:40rpx;
+}
+
+.center_top {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 80px;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.center_top text{
+  margin-top: 60rpx;
+  margin-left: 105rpx;
+  font-size: 42rpx;
+  font-weight: 600;
+
+}
+
+
+.center_down {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 35px;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  margin-left: 110rpx;
+}
+
+.center_rank {
+  width: 50%;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+}
+
+.rank_text {
+  height: 35px;
+  line-height: 35px;
+  margin-left: 10rpx;
+  color: #AAAAAA;
+}
+
+.center_top image {
+  width: 35px;
+  height: 35px;
+  margin-top: 50rpx;
+  margin-left: 50rpx;
+}
+
+.center_score {
+  width: 50%;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+}
+
+.center_score image {
+  width: 35px;
+  height: 35px;
+}
+
+.gif-wave {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  mix-blend-mode: screen;
+  height: 100rpx;
+}
+
+
+
+.name{
+  position: absolute;
+  width: 250rpx;
+  text-align:center ;
+  right: -1rpx;
+  top: 170rpx;
+  font-weight: 600;
+  padding: 13rpx;
+  color: rgb(206, 90, 22);
+  border-radius: 15rpx;
+  z-index: 9999;
+
+}
+
+.code{
+
+  position: absolute;
+  width: 300rpx;
+  text-align:center ;
+  right: -35rpx;
+  top: 240rpx;
+  font-weight: 600;
+  padding: 13rpx;
+  color: rgb(206, 90, 22);
+  border-radius: 15rpx;
+  z-index: 9999;
+
 }

@@ -6,7 +6,7 @@
   justify-content:space-between;
 }
 .products-item{
-  min-height:310rpx;
+  min-height:500rpx;
   width: 99.5%;
   border-radius: 20rpx;
   margin-bottom: 15rpx;

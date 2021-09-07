@@ -1,0 +1,172 @@
+.conter{
+  padding: 0%;
+  margin: 0%;
+  }
+  .student_top .student_webp{
+  width: 100%;
+  height: 320rpx;
+  position: relative;
+  }
+  .itmen_left{
+    position: absolute;
+  width: 100%;
+  height: 300rpx;
+  top: 100rpx;
+  left: 30rpx;
+  
+  }
+  
+  .itmen_left .student_image{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+  }
+  
+  .itmen_left .name{
+     font-size:38rpx ;
+     font-weight: 800;
+     margin-left: 55rpx;
+     margin-top:120rpx; 
+    
+    }
+    .itmen_left .btn_student{
+    width: 210rpx;
+    height: 70rpx;
+    font-size:30rxp;
+    margin-top: -140rpx;
+    margin-left: 465rpx;
+    text-align: center;
+    display: flex;
+    padding-left: 20rpx;
+    justify-content: left;
+    align-items: center;
+    border-radius: 10rpx;
+    background-color: aliceblue;
+    }
+    
+    .itmen_left .btn_student_null{
+     display: none;
+  
+      }
+  
+  
+    .textItem {
+      width: 333px;
+      height: 50px;
+      margin: 23rpx;
+      font-size: 35rpx;
+      font-style: initial;
+      font-weight: 800;
+      text-align: center;
+      display: flex;
+      padding-left: 20rpx;
+      justify-content: left;
+      align-items: center;
+      background-color: #87CEFA;
+      border-radius: 10rpx;
+    }
+  
+    .Items{
+      position: relative;
+    }
+  
+    .arrow{
+    position: absolute;
+     width: 47rpx;
+     height: 40rpx;
+     top: 30rpx;
+     right: 50rpx;
+    }
+    /* 带输入弹窗 */
+  
+   /* 弹窗 */
+  .show-btn {
+    margin-top: 100rpx;
+    color: #22cc22;
+  }
+  
+  
+  .modal-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+    z-index: 9000;
+    color: #fff;
+  }
+  
+  .allmodal-dialog {
+    width: 540rpx;
+    overflow: hidden;
+    position: fixed;
+    top: 17%;
+    left: 0;
+    z-index: 9999;
+    background: #fff;
+    margin: -100rpx 105rpx;
+    border-radius: 36rpx;
+  }
+  
+  .modal-dialog {
+    width: 540rpx;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 9999;
+    background: #fff;
+    margin: -180rpx 105rpx;
+    border-radius: 36rpx;
+  }
+  .modal-title {
+    padding-top: 50rpx;
+    font-size: 36rpx;
+    color: #030303;
+    text-align: center;
+  }
+  .modal-content {
+    padding: 50rpx 32rpx;
+  }
+  .modal-input {
+    display: flex;
+    background: #fff;
+    border-bottom: 2rpx solid #ddd;
+    border-radius: 4rpx;
+    font-size: 28rpx;
+  }
+  .input {
+    width: 100%;
+    height: 82rpx;
+    font-size: 28rpx;
+    line-height: 28rpx;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    color: #333;
+  }
+  input-holder {
+    color: #666;
+    font-size: 28rpx;
+  }
+  .modal-footer {
+    display: flex;
+    flex-direction: row;
+    height: 86rpx;
+    border-top: 1px solid #dedede;
+    font-size: 34rpx;
+    line-height: 86rpx;
+  }
+  .btn-cancel {
+    width: 50%;
+    color: #666;
+    text-align: center;
+    border-right: 1px solid #dedede;
+  }
+  .btn-confirm {
+    width: 50%;
+    color: #ec5300;
+    text-align: center;
+  }

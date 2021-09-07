@@ -1,0 +1,13 @@
+/* pages/Message/Message.wxss */
+
+.conter{
+ width: 100%;
+ height: 3200rpx;
+ position: relative;
+}
+
+image{
+  position: absolute;
+width: 100%;
+height: 100%;
+}

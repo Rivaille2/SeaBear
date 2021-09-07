@@ -1,0 +1,3 @@
+@import "../tpls/base.wxss";
+@import "../tpls/bolangmodel/bolangmodel-tpl.wxss";
+@import "../tpls/ListCategory/ListCategory-tpl.wxss";

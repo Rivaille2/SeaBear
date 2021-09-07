@@ -12,11 +12,24 @@ Page({
   },
 
   onLoad: function (options) {
-
+//   使按键动起来
+    this.go();
   },
 
   onShow: function () {
-   this._loadData();
+    var banner=wx.getStorageSync('bannerArr')
+    var articel=wx.getStorageSync('ArticleArr')
+
+    this._loadData();
+    // if(banner && articel){
+    //   this.setData({
+    //     'bannerArr':banner,
+    //     'ArticleArr':articel
+    //     })
+    // }else{
+    //   this._loadData();
+    // }
+
   },
 
 
@@ -31,23 +44,27 @@ start.getBannerData(id,(res)=>{
 this.setData({
 'bannerArr':res
 })
-  
+wx.setStorageSync('bannerArr', res)  
+
 console.log(res)
 });
 
 
+
+start.getArticel((res)=>{
+// 进行数据绑定，也是数据更新
+this.setData({
+'ArticleArr':res,
+})
+
+wx.setStorageSync('ArticleArr', res)  
+
+console.log("ArticleArr:",res)
+});
+
 },
 
 
-// 注册登录点击事件
-
-MImiClick:function(){
-
-  wx.navigateTo({
-    url: '../login/login',
-  })
-
-},
 
 // 学员登录点击事件
 
@@ -59,22 +76,14 @@ StudentLogin:function(){
 
 },
 
-// 学员进度点击事件
 
-StudentDetail:function(){
 
-  wx.navigateTo({
-    url: '../StudyProgress/StudyProgess',
-  })
+// 好文章点击事件
 
-},
-
-// 学习计划点击事件
-
-StudentSchedule:function(){
+StudentGoodArticle:function(){
 
   wx.navigateTo({
-    url: '../StudentSchedule/StudentSchedule',
+    url: '../GoodArticle/GoodArticle',
   })
 
 },
@@ -89,18 +98,94 @@ StudentVideo:function(){
 
 },
 
-// 课后练习点击事件
-
-StudentExercise:function(){
+// 积分排行点击事件
+StudentRanking:function(){
 
   wx.navigateTo({
-    url: '../StudentExercise/StudentExercise',
+    url: '../StudentRankling/StudentRankling',
+  })
+
+},
+
+// // 课后练习点击事件
+
+// StudentExercise:function(){
+
+//   wx.navigateTo({
+//     url: '../StudentExercise/StudentExercise',
+//   })
+
+// },
+
+// 每日签到点击事件
+StudentSign:function(){
+  wx.navigateTo({
+    url: '../SignIn/SignIn',
+  })
+
+},
+
+// 竞赛点击事件
+StudentCompetition:function(){
+  wx.navigateTo({
+    url: '../Competition/Competition',
+  })
+
+},
+
+// 竞赛点击事件
+CompetitionRankTap:function(){
+  wx.navigateTo({
+    url: '../RankList/RankList',
   })
 
 },
 
 
 
+// 使按键，动起来
+go: function() {
+  // 创建动画实例(animation)
+  var animation = wx.createAnimation({
+    duration: 500,//动画持续时间
+    timingFunction: 'ease',//动画以低速开始
+    //具体配置项请查看文档
+  })
+ // 建立标识(用于循环)
+ this.animation = animation
+ var next = true;
+  // 无限循环动画
+  setInterval(function(){
+    if(next){
+      // 你要执行动画链(详见文档)
+      this.animation.scale(0.8).step()
+      next = !next;
+    }
+    else
+    {
+      // 你要执行动画链(详见文档)
+      this.animation.scale(1).step()
+      next = !next;
+    }
+  // 导出动画
+  this.setData({
+    animationData: animation.export()
+  }) 
+ }.bind(this),500)
+},
+
+// 文章板块
+
+StudentRead:function(e){
+
+  var id=start.getDataset(e,'id');
+  console.log("idkind:",id);
+  wx.navigateTo({
+    url: '../ArticleModel/ArticleModel?id='+id,
+  })
+
+
+}
 
 
 

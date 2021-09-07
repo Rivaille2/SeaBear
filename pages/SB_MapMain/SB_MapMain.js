@@ -135,7 +135,7 @@ if(flag){
 //注册功能的实现
 wx.request({
   method: "POST", //指定为http协议中的POST方法
-  url: 'https://hemantower.com/xiaobeisignin/uersubmit', //后端接口完整URL
+  url: 'https://douyacai.work/xiaobeisignin/uersubmit', //后端接口完整URL
   data: {
     name:name,
     lagitude: this.data.lagitude,

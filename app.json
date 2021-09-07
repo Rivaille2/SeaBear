@@ -7,7 +7,6 @@
     "pages/AthorLogin/AthorLogin",
     "pages/Merchant/Merchant",
     "pages/Update/Update",
-    "pages/Libraly/Library",
     "pages/laboratory/laboratory",
     "pages/StudentLogin/StudentLogin",
     "pages/StudyProgress/StudyProgess",
@@ -16,7 +15,32 @@
     "pages/StudentExercise/StudentExercise",
     "pages/Teacherlogin/Teacherlogin",
     "pages/TeacherMain/TeacherMain",
-    "pages/StudentMain/StudentMain"
+    "pages/StudentMain/StudentMain",
+    "pages/Mymessage/Mymessage",
+    "pages/SignIn/SignIn",
+    "pages/Conversion/Conversion",
+    "pages/WordSign/WordSign",
+    "pages/compositionSign/compositionSign",
+    "pages/SignInModel/SignInModel",
+    "pages/ComSignInModel/ComSignInModel",
+    "pages/Competition/Competition",
+    "pages/RankList/RankList",
+    "pages/OperationUpdate/OperationUpdate",
+    "pages/StudentVideoModel/StudentVideoModel",
+    "pages/VideoPlayModel/VideoPlayModel",
+    "pages/RankGift/RankGift",
+    "pages/ArticleModel/ArticleModel",
+    "pages/JobDetail/JobDetail",
+    "pages/TeacherWatchStd/TeacherWatchStd",
+    "pages/Message/Message",
+    "pages/Exercise/Exercise",
+    "pages/StudentRankling/StudentRankling",
+    "pages/GoodArticle/GoodArticle",
+    "pages/WritePunch/WritePunch",
+    "pages/WritePunchModel/WritePunchModel",
+    "pages/ArticlePunch/ArticlePunch",
+    "pages/ArticlePunchModel/ArticlePunchModel",
+    "pages/GoodArticleModel/GoodArticleModel"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -53,13 +77,7 @@
         "selectedIconPath": "/pages/Icon/line_start.png",
         "iconPath": "/pages/Icon/line_end.png",
         "pagePath": "pages/text/text",
-        "text": "在线功能"
-      },
-      {
-        "selectedIconPath": "/pages/Icon/library_start.png",
-        "iconPath": "/pages/Icon/library_end.png",
-        "pagePath": "pages/Libraly/Library",
-        "text": "图书馆"
+        "text": "在线辅导"
       },
       {
         "selectedIconPath": "/pages/Icon/lab_start.png",

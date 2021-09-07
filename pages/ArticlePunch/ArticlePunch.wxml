@@ -1,0 +1,28 @@
+<import src="../tpls/ListCategory/ListCategory-tpl.wxml" />
+
+<view class="conter">
+
+ <!-- 阅读小故事 -->
+ <view class="product">
+
+<view class="top">
+  <view class="center">
+
+    <view class="center_top">
+      <image class="rank_icon" src="/pages/Icon/article.png"></image>
+      <text>----- 阅读小故事 -----</text>
+    </view>
+
+  </view>
+  <image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
+</view>
+</view>
+
+
+<!-- 单元列表分类 -->
+<view class="product">
+  <template is="WordListSign" data="{{genreArr:getArticelDan}}"></template>
+</view>
+
+
+</view>

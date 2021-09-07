@@ -1,5 +1,4 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "视频教程",
-  "navigationBarTextStyle": "black"
+  "navigationStyle": "custom"
 }
